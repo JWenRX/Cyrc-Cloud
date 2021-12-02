@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.rcgl.mapper.RcglRcMapper">
+    
+    <resultMap type="RcglRc" id="RcglRcResult">
+        <result property="rcId"    column="rc_id"    />
+        <result property="rcCompany"    column="rc_company"    />
+        <result property="rcName"    column="rc_name"    />
+        <result property="rcResearchField"    column="rc_research_field"    />
+        <result property="rcPaperNum"    column="rc_paper_num"    />
+        <result property="rcPatentNum"    column="rc_patent_num"    />
+        <result property="rcProjectNum"    column="rc_project_num"    />
+        <result property="rcActivation"    column="rc_activation"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="rcAreas"    column="rc_areas"    />
+    </resultMap>
+
+    <sql id="selectRcglRcVo">
+        select rc_id, rc_company, rc_areas,rc_name, rc_research_field, rc_paper_num, rc_patent_num, rc_project_num, rc_activation, create_by, create_time, update_by, update_time from rcgl_rc
+    </sql>
+
+    <select id="selectRcglRcList" parameterType="RcglRc" resultMap="RcglRcResult">
+        <include refid="selectRcglRcVo"/>
+        <where>  
+            <if test="rcCompany != null "> and rc_company like concat('%', #{rcCompany}, '%')</if>
+            <if test="rcName != null  and rcName != ''"> and rc_name like concat('%', #{rcName}, '%')</if>
+            <if test="rcResearchField != null  and rcResearchField != ''"> and rc_research_field like concat('%', #{rcResearchField}, '%')</if>
+            <if test="rcPaperNum != null "> and rc_paper_num = #{rcPaperNum}</if>
+            <if test="rcPatentNum != null "> and rc_patent_num = #{rcPatentNum}</if>
+            <if test="rcProjectNum != null "> and rc_project_num = #{rcProjectNum}</if>
+            <if test="rcActivation != null "> and rc_activation >= #{rcActivation}</if>
+            <if test="rcAreas != null "> and rc_areas like concat('%', #{rcAreas}, '%')</if>
+             and is_deleted=0
+        </where>
+    </select>
+    
+    <select id="selectRcglRcByRcId" parameterType="Long" resultMap="RcglRcResult">
+        <include refid="selectRcglRcVo"/>
+        where rc_id = #{rcId} and is_deleted=0
+    </select>
+        
+    <insert id="insertRcglRc" parameterType="RcglRc">
+        insert into rcgl_rc
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="rcId != null">rc_id,</if>
+            <if test="rcCompany != null">rc_company,</if>
+            <if test="rcName != null">rc_name,</if>
+            <if test="rcResearchField != null">rc_research_field,</if>
+            <if test="rcPaperNum != null">rc_paper_num,</if>
+            <if test="rcPatentNum != null">rc_patent_num,</if>
+            <if test="rcProjectNum != null">rc_project_num,</if>
+            <if test="rcActivation != null">rc_activation,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="rcAreas != null">rc_areas,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="rcId != null">#{rcId},</if>
+            <if test="rcCompany != null">#{rcCompany},</if>
+            <if test="rcName != null">#{rcName},</if>
+            <if test="rcResearchField != null">#{rcResearchField},</if>
+            <if test="rcPaperNum != null">#{rcPaperNum},</if>
+            <if test="rcPatentNum != null">#{rcPatentNum},</if>
+            <if test="rcProjectNum != null">#{rcProjectNum},</if>
+            <if test="rcActivation != null">#{rcActivation},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="rcAreas != null">#{rcAreas},</if>
+         </trim>
+    </insert>
+
+    <update id="updateRcglRc" parameterType="RcglRc">
+        update rcgl_rc
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="rcCompany != null">rc_company = #{rcCompany},</if>
+            <if test="rcName != null">rc_name = #{rcName},</if>
+            <if test="rcResearchField != null">rc_research_field = #{rcResearchField},</if>
+            <if test="rcPaperNum != null">rc_paper_num = #{rcPaperNum},</if>
+            <if test="rcPatentNum != null">rc_patent_num = #{rcPatentNum},</if>
+            <if test="rcProjectNum != null">rc_project_num = #{rcProjectNum},</if>
+            <if test="rcActivation != null">rc_activation = #{rcActivation},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="rcAreas != null">rc_areas = #{rcAreas},</if>
+        </trim>
+        where rc_id = #{rcId}
+    </update>
+
+    <delete id="deleteRcglRcByRcId" parameterType="Long">
+        update rcgl_rc set is_deleted=1 where rc_id = #{rcId}
+    </delete>
+
+    <delete id="deleteRcglRcByRcIds" parameterType="String">
+        update rcgl_rc set is_deleted=1 where rc_id in
+        <foreach item="rcId" collection="array" open="(" separator="," close=")">
+            #{rcId}
+        </foreach>
+    </delete>
+</mapper>
