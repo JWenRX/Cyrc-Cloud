@@ -109,6 +109,11 @@
 
     <el-table v-loading="loading" :data="rcList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center"/>
+      <el-table-column align="center" type="index" width="60" label="序号">
+        <template slot-scope="scope">
+          {{(queryParams.pageNum - 1) * queryParams.pageSize + scope.$index + 1}}
+        </template>
+      </el-table-column>
       <el-table-column label="姓名" align="center" prop="rcName"/>
       <el-table-column label="所属机构" align="center" prop="rcCompany"/>
       <el-table-column label="所在区域" align="center" prop="rcAreas"/>
