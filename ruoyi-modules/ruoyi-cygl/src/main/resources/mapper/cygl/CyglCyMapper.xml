@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.cygl.mapper.CyglCyMapper">
+    
+    <resultMap type="CyglCy" id="CyglCyResult">
+        <result property="cyId"    column="cy_id"    />
+        <result property="cyName"    column="cy_name"    />
+        <result property="cyDirection"    column="cy_direction"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="isDeleted"    column="is_deleted"    />
+    </resultMap>
+
+    <sql id="selectCyglCyVo">
+        select cy_id, cy_name, cy_direction, create_by, create_time, update_by, update_time, is_deleted from cygl_cy
+    </sql>
+
+    <select id="selectCyglCyList" parameterType="CyglCy" resultMap="CyglCyResult">
+        <include refid="selectCyglCyVo"/>
+        <where>  
+            <if test="cyName != null  and cyName != ''"> and cy_name like concat('%', #{cyName}, '%')</if>
+            <if test="cyDirection != null  and cyDirection != ''"> and cy_direction = #{cyDirection}</if>
+             and is_deleted = 0
+        </where>
+        order by create_time desc
+    </select>
+    
+    <select id="selectCyglCyByCyId" parameterType="Long" resultMap="CyglCyResult">
+        <include refid="selectCyglCyVo"/>
+        where cy_id = #{cyId} and is_deleted=0
+    </select>
+        
+    <insert id="insertCyglCy" parameterType="CyglCy">
+        insert into cygl_cy
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cyId != null">cy_id,</if>
+            <if test="cyName != null">cy_name,</if>
+            <if test="cyDirection != null">cy_direction,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cyId != null">#{cyId},</if>
+            <if test="cyName != null">#{cyName},</if>
+            <if test="cyDirection != null">#{cyDirection},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCyglCy" parameterType="CyglCy">
+        update cygl_cy
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="cyName != null">cy_name = #{cyName},</if>
+            <if test="cyDirection != null">cy_direction = #{cyDirection},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where cy_id = #{cyId} and is_deleted=0
+    </update>
+
+    <delete id="deleteCyglCyByCyId" parameterType="Long">
+        update cygl_cy set is_deleted=1 where cy_id = #{cyId}
+    </delete>
+
+    <delete id="deleteCyglCyByCyIds" parameterType="String">
+        update cygl_cy set is_deleted=1 where cy_id in
+        <foreach item="cyId" collection="array" open="(" separator="," close=")">
+            #{cyId}
+        </foreach>
+    </delete>
+</mapper>
