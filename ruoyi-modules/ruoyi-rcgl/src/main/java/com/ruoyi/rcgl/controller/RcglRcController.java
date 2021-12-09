@@ -3,6 +3,9 @@ package com.ruoyi.rcgl.controller;
 import java.util.List;
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ruoyi.rcgl.model.Qygl;
+import com.ruoyi.rcgl.service.RemoteQyglService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +37,9 @@ public class RcglRcController extends BaseController
 {
     @Autowired
     private IRcglRcService rcglRcService;
+
+    @Autowired
+    private RemoteQyglService remoteQyglService;
 
     /**
      * 查询人才列表
@@ -101,5 +107,17 @@ public class RcglRcController extends BaseController
     public AjaxResult remove(@PathVariable Long[] rcIds)
     {
         return toAjax(rcglRcService.deleteRcglRcByRcIds(rcIds));
+    }
+
+    /**
+     * 查询企业管理列表
+     */
+    @RequiresPermissions("rcgl:rc:list")
+    @GetMapping("/qyList")
+    public List<Qygl> qyList()
+    {
+        List<Qygl> qyList = remoteQyglService.qyList();
+        System.out.println(qyList);
+        return qyList;
     }
 }

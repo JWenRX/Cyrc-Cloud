@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.qygl.mapper.QyglMapper">
+
+    <resultMap type="Qygl" id="QyglResult">
+        <result property="qyId" column="qy_id"/>
+        <result property="qyName" column="qy_name"/>
+        <result property="qyIndustry" column="qy_industry"/>
+        <result property="qyAreas" column="qy_areas"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <association property="cy" column="cy_id" javaType="CyglCy" resultMap="CyglCyResult"/>
+    </resultMap>
+
+    <resultMap type="CyglCy" id="CyglCyResult">
+        <result property="cyId" column="cy_id"/>
+        <result property="cyName" column="cy_name"/>
+        <result property="cyDirection" column="cy_direction"/>
+        <result property="isDeleted" column="is_deleted"/>
+    </resultMap>
+
+    <sql id="selectQyglVo">
+        select qy_id,
+               qy_name,
+               qy_industry,
+               qy_areas,
+               create_by,
+               create_time,
+               update_by,
+               update_time,
+               is_deleted
+        from qygl
+    </sql>
+
+    <select id="selectQyglList" parameterType="Qygl" resultMap="QyglResult">
+        select q.qy_id,q.qy_Name,q.qy_industry,q.qy_Areas,c.cy_name
+        from qygl q
+        left join cygl_cy c
+        on q.qy_industry = c.cy_id
+        <where>
+            <if test="qyName != null  and qyName != ''">and qy_name like concat('%', #{qyName}, '%')</if>
+            <if test="qyIndustry != null ">and qy_industry = #{qyIndustry}</if>
+            <if test="qyAreas != null  and qyAreas != ''">and qy_areas like concat('%', #{qyAreas}, '%')</if>
+            and q.is_deleted=0
+        </where>
+        order by q.create_time desc
+    </select>
+
+    <select id="selectQyglByQyId" parameterType="Long" resultMap="QyglResult">
+        <include refid="selectQyglVo"/>
+        where qy_id = #{qyId} and is_deleted=0
+    </select>
+
+    <select id="getQyList" resultMap="QyglResult">
+        select *
+        from qygl
+        where is_deleted = 0;
+    </select>
+
+    <insert id="insertQygl" parameterType="Qygl">
+        insert into qygl
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="qyId != null">qy_id,</if>
+            <if test="qyName != null">qy_name,</if>
+            <if test="qyIndustry != null">qy_industry,</if>
+            <if test="qyAreas != null">qy_areas,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="qyId != null">#{qyId},</if>
+            <if test="qyName != null">#{qyName},</if>
+            <if test="qyIndustry != null">#{qyIndustry},</if>
+            <if test="qyAreas != null">#{qyAreas},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateQygl" parameterType="Qygl">
+        update qygl
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="qyName != null">qy_name = #{qyName},</if>
+            <if test="qyIndustry != null">qy_industry = #{qyIndustry},</if>
+            <if test="qyAreas != null">qy_areas = #{qyAreas},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where qy_id = #{qyId} and is_deleted=0
+    </update>
+
+    <update id="deleteQyglByQyId" parameterType="Long">
+        update qygl
+        set is_deleted=1
+        where qy_id = #{qyId}
+    </update>
+
+    <update id="deleteQyglByQyIds" parameterType="String">
+        update qygl set is_deleted=1 where qy_id in
+        <foreach item="qyId" collection="array" open="(" separator="," close=")">
+            #{qyId}
+        </foreach>
+    </update>
+</mapper>

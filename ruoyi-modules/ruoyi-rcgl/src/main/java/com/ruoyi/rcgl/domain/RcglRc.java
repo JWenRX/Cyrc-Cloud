@@ -1,6 +1,7 @@
 package com.ruoyi.rcgl.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ruoyi.rcgl.model.Qygl;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,7 +30,7 @@ public class RcglRc {
      * 所属机构
      */
     @Excel(name = "所属机构")
-    private String rcCompany;
+    private Long rcCompany;
 
     /**
      * 所在区域
@@ -76,7 +77,7 @@ public class RcglRc {
     /**
      * 创建者
      */
-    private Long createBy;
+    private String createBy;
 
     /**
      * 创建时间
@@ -87,7 +88,7 @@ public class RcglRc {
     /**
      * 更新者
      */
-    private Long updateBy;
+    private String updateBy;
 
     /**
      * 更新时间
@@ -99,5 +100,10 @@ public class RcglRc {
      * 是否删除
      **/
     private Integer isDeleted;
+
+    /**
+     * 企业
+     */
+    private Qygl qy;
 
 }

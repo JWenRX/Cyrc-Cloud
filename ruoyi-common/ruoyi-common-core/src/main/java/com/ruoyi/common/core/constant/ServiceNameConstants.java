@@ -21,4 +21,14 @@ public class ServiceNameConstants
      * 文件服务的serviceid
      */
     public static final String FILE_SERVICE = "ruoyi-file";
+
+    /**
+     * 产业服务的serviceid
+     */
+    public static final String CYGL_SERVICE = "ruoyi-cygl";
+
+    /**
+     * 人才服务的serviceid
+     */
+    public static final String RCGL_SERVICE = "ruoyi-rcgl";
 }

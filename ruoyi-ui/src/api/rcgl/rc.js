@@ -42,3 +42,11 @@ export function delRc(rcId) {
     method: 'delete'
   })
 }
+
+// 查询企业列表
+export function qyList() {
+  return request({
+    url: '/rcgl/rc/qyList',
+    method: 'get'
+  })
+}

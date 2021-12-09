@@ -54,7 +54,7 @@ public class RcglRcServiceImpl implements IRcglRcService {
     public int insertRcglRc(RcglRc rcglRc) {
         rcglRc.setCreateTime(DateUtils.getNowDate());
         rcglRc.setRcId(UUIDUtils.getUUIDInOrderId().longValue());
-        rcglRc.setCreateBy(SecurityUtils.getUserId());
+        rcglRc.setCreateBy(SecurityUtils.getUsername());
         return rcglRcMapper.insertRcglRc(rcglRc);
     }
 
@@ -67,7 +67,7 @@ public class RcglRcServiceImpl implements IRcglRcService {
     @Override
     public int updateRcglRc(RcglRc rcglRc) {
         rcglRc.setUpdateTime(DateUtils.getNowDate());
-        rcglRc.setUpdateBy(SecurityUtils.getUserId());
+        rcglRc.setUpdateBy(SecurityUtils.getUsername());
         return rcglRcMapper.updateRcglRc(rcglRc);
     }
 

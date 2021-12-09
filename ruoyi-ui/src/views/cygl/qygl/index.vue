@@ -1,51 +1,31 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" v-show="showSearch" label-width="68px">
-      <el-form-item label="姓名" prop="rcName">
+      <el-form-item label="企业名称" prop="qyName">
         <el-input
-          v-model="queryParams.rcName"
-          placeholder="请输入姓名"
+          v-model="queryParams.qyName"
+          placeholder="请输入企业名称"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="所属机构" prop="rcCompany">
-        <el-select v-model="queryParams.rcCompany"
-                   placeholder="请选择所属机构"
+      <el-form-item label="所属产业" prop="qyIndustry">
+        <el-select v-model="queryParams.qyIndustry"
+                   placeholder="请选择企业所属产业"
                    clearable
                    filterable
                    @keyup.enter.native="handleQuery"
                    size="small">
           <el-option
-            v-for="item in qyList"
-            :key="item.qyId"
-            :label="item.qyName"
-            :value="item.qyId">
+            v-for="item in cyList"
+            :key="item.cyId"
+            :label="item.cyName"
+            :value="item.cyId">
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="研究方向" prop="rcResearchField">
-        <el-input
-          v-model="queryParams.rcResearchField"
-          placeholder="请输入研究方向"
-          clearable
-          size="small"
-          @keyup.enter.native="handleQuery"
-        />
-      </el-form-item>
-      <el-form-item label="活跃度" prop="rcActivation">
-        <el-input-number
-          :min="60"
-          :max="100"
-          :step="10"
-          clearable
-          size="medium"
-          v-model="queryParams.rcActivation"
-          @keyup.enter.native="handleQuery"
-        />
-      </el-form-item>
-      <el-form-item label="区域" prop="selectedOptions">
+      <el-form-item label="所在城市" prop="selectedOptions">
         <div id="app">
           <el-cascader
             :options="options"
@@ -72,7 +52,7 @@
           icon="el-icon-plus"
           size="mini"
           @click="handleAdd"
-          v-hasPermi="['rcgl:rc:add']"
+          v-hasPermi="['cygl:qygl:add']"
         >新增
         </el-button>
       </el-col>
@@ -84,7 +64,7 @@
           size="mini"
           :disabled="single"
           @click="handleUpdate"
-          v-hasPermi="['rcgl:rc:edit']"
+          v-hasPermi="['cygl:qygl:edit']"
         >修改
         </el-button>
       </el-col>
@@ -96,7 +76,7 @@
           size="mini"
           :disabled="multiple"
           @click="handleDelete"
-          v-hasPermi="['rcgl:rc:remove']"
+          v-hasPermi="['cygl:qygl:remove']"
         >删除
         </el-button>
       </el-col>
@@ -107,28 +87,23 @@
           icon="el-icon-download"
           size="mini"
           @click="handleExport"
-          v-hasPermi="['rcgl:rc:export']"
+          v-hasPermi="['cygl:qygl:export']"
         >导出
         </el-button>
       </el-col>
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
-    <el-table v-loading="loading" :data="rcList" @selection-change="handleSelectionChange">
+    <el-table v-loading="loading" :data="qyglList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center"/>
       <el-table-column align="center" type="index" width="60" label="序号">
         <template slot-scope="scope">
           {{(queryParams.pageNum - 1) * queryParams.pageSize + scope.$index + 1}}
         </template>
       </el-table-column>
-      <el-table-column label="姓名" align="center" prop="rcName"/>
-      <el-table-column label="所属机构" align="center" prop="qy.qyName"/>
-      <el-table-column label="所在区域" align="center" prop="rcAreas"/>
-      <el-table-column label="研究方向" align="center" prop="rcResearchField"/>
-      <el-table-column label="论文数" align="center" prop="rcPaperNum"/>
-      <el-table-column label="专利数" align="center" prop="rcPatentNum"/>
-      <el-table-column label="项目数" align="center" prop="rcProjectNum"/>
-      <el-table-column label="活跃度" align="center" prop="rcActivation"/>
+      <el-table-column label="企业名称" align="center" prop="qyName"/>
+      <el-table-column label="所属产业" align="center" prop="cy.cyName"/>
+      <el-table-column label="所在城市" align="center" prop="qyAreas"/>
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
@@ -136,7 +111,7 @@
             type="text"
             icon="el-icon-edit"
             @click="handleUpdate(scope.row)"
-            v-hasPermi="['rcgl:rc:edit']"
+            v-hasPermi="['cygl:qygl:edit']"
           >修改
           </el-button>
           <el-button
@@ -144,7 +119,7 @@
             type="text"
             icon="el-icon-delete"
             @click="handleDelete(scope.row)"
-            v-hasPermi="['rcgl:rc:remove']"
+            v-hasPermi="['cygl:qygl:remove']"
           >删除
           </el-button>
         </template>
@@ -159,51 +134,35 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改人才管理对话框 -->
+    <!-- 添加或修改企业管理对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="姓名" prop="rcName">
-          <el-input v-model="form.rcName" placeholder="请输入姓名"/>
+        <el-form-item label="企业名称" prop="qyName">
+          <el-input v-model="form.qyName" placeholder="请输入企业名称"/>
         </el-form-item>
-        <el-form-item label="所属机构" prop="rcCompany">
-<!--          <el-input v-model="form.rcCompany" placeholder="请输入所属机构"/>-->
-          <el-select v-model="form.rcCompany" placeholder="请选择所属机构" style="width: 380px">
+        <el-form-item label="所属产业" prop="isDeleted">
+          <el-select v-model="form.qyIndustry" placeholder="请选择企业所属产业" style="width: 380px">
             <el-option
-              v-for="item in qyList"
-              :key="item.qyId"
-              :label="item.qyName"
-              :value="item.qyId">
+              v-for="item in cyList"
+              :key="item.cyId"
+              :label="item.cyName"
+              :value="item.cyId">
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="所在区域" prop="selectedOptions">
+        <el-form-item label="所在城市" prop="selectedOptions">
           <div id="app">
             <el-cascader
               ref="cascaderAddr"
               :options="options"
               expand-trigger="hover"
               size="medium"
-              style="width: 380px"
               :props="cateProps"
+              style="width: 380px"
               v-model="form.selectedOptions"
               @change="rcAreasChange"
             />
           </div>
-        </el-form-item>
-        <el-form-item label="研究方向" prop="rcResearchField">
-          <el-input v-model="form.rcResearchField" placeholder="请输入研究方向"/>
-        </el-form-item>
-        <el-form-item label="论文数" prop="rcPaperNum">
-          <el-input v-model="form.rcPaperNum" placeholder="请输入论文数"/>
-        </el-form-item>
-        <el-form-item label="专利数" prop="rcPatentNum">
-          <el-input v-model="form.rcPatentNum" placeholder="请输入专利数"/>
-        </el-form-item>
-        <el-form-item label="项目数" prop="rcProjectNum">
-          <el-input v-model="form.rcProjectNum" placeholder="请输入项目数"/>
-        </el-form-item>
-        <el-form-item label="活跃度" prop="rcActivation">
-          <el-input v-model="form.rcActivation" placeholder="请输入活跃度"/>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -215,11 +174,12 @@
 </template>
 
 <script>
-import {listRc, getRc, delRc, addRc, updateRc,qyList} from "@/api/rcgl/rc";
+import {listQygl, getQygl, delQygl, addQygl, updateQygl, cyList} from "@/api/cygl/qygl";
+import {getCy} from "@/api/cygl/cy";
 import {provinceAndCityDataPlus, CodeToText, TextToCode} from 'element-china-area-data' // 4.省市区带‘全部’三级联动选择
 
 export default {
-  name: "Rc",
+  name: "Qygl",
   data() {
     return {
       // 遮罩层
@@ -234,8 +194,8 @@ export default {
       showSearch: true,
       // 总条数
       total: 0,
-      // 人才信息表格数据
-      rcList: [],
+      // 企业管理表格数据
+      qyglList: [],
       // 弹出层标题
       title: "",
       // 是否显示弹出层
@@ -244,14 +204,9 @@ export default {
       queryParams: {
         pageNum: 1,
         pageSize: 10,
-        rcCompany: null,
-        rcName: null,
-        rcResearchField: null,
-        rcPaperNum: null,
-        rcPatentNum: null,
-        rcProjectNum: null,
-        rcActivation: null,
-        rcAreas: null
+        qyName: null,
+        qyIndustry: null,
+        qyAreas: null,
       },
       // 表单参数
       form: {},
@@ -268,59 +223,16 @@ export default {
         label: 'label',
         children: 'children',
       },
-      qyList:[],
+      cyList: [],
+      cyAddList: [],
+      data: {}
     };
   },
-
   created() {
     this.getList();
-    this.getQyList();
+    this.getCyList();
   },
   methods: {
-
-    /** 查询人才列表 */
-    getList() {
-      this.loading = true;
-      this.queryParams.rcAreas = this.areas2
-      listRc(this.queryParams).then(response => {
-        this.rcList = response.rows;
-        this.total = response.total;
-        this.loading = false;
-      });
-    },
-    /** 查询企业列表 **/
-    getQyList() {
-      this.loading = true;
-      qyList().then(response => {
-        this.qyList = response;
-        this.loading = false;
-      });
-    },
-    // 取消按钮
-    cancel() {
-      this.open = false;
-      this.reset();
-    },
-    // 表单重置
-    reset() {
-      this.form = {
-        rcId: null,
-        rcCompany: null,
-        rcName: null,
-        rcResearchField: null,
-        rcPaperNum: null,
-        rcPatentNum: null,
-        rcProjectNum: null,
-        rcActivation: null,
-        createBy: null,
-        createTime: null,
-        updateBy: null,
-        updateTime: null,
-        rcAreas: null,
-        selectedOptions: []
-      };
-      this.resetForm("form");
-    },
     /** 级联选择城市-添加/修改 **/
     rcAreasChange() {
       var loc = ''
@@ -355,6 +267,44 @@ export default {
       // 输出区域码所对应的属性值即中文地址
       this.areas2 = loc
     },
+    /** 查询企业管理列表 */
+    getList() {
+      this.loading = true;
+      this.queryParams.qyAreas = this.areas2
+      listQygl(this.queryParams).then(response => {
+        this.qyglList = response.rows;
+        this.total = response.total;
+        this.loading = false;
+      });
+    },
+    /** 查询产业列表 **/
+    getCyList() {
+      this.loading = true;
+      cyList().then(response => {
+        this.cyList = response;
+        this.loading = false;
+      });
+    },
+    // 取消按钮
+    cancel() {
+      this.open = false;
+      this.reset();
+    },
+    // 表单重置
+    reset() {
+      this.form = {
+        qyId: null,
+        qyName: null,
+        qyIndustry: null,
+        qyAreas: null,
+        createBy: null,
+        createTime: null,
+        updateBy: null,
+        updateTime: null,
+        selectedOptions: []
+      };
+      this.resetForm("form");
+    },
     /** 搜索按钮操作 */
     handleQuery() {
       this.queryParams.pageNum = 1;
@@ -369,7 +319,7 @@ export default {
     },
     // 多选框选中数据
     handleSelectionChange(selection) {
-      this.ids = selection.map(item => item.rcId)
+      this.ids = selection.map(item => item.qyId)
       this.single = selection.length !== 1
       this.multiple = !selection.length
     },
@@ -377,41 +327,41 @@ export default {
     handleAdd() {
       this.reset();
       this.open = true;
-      this.title = "添加人才信息";
+      this.title = "添加企业信息";
     },
     /** 修改按钮操作 */
     handleUpdate(row) {
       this.reset();
-      const rcId = row.rcId || this.ids
-      getRc(rcId).then(response => {
+      const qyId = row.qyId || this.ids
+      getQygl(qyId).then(response => {
         this.form = response.data;
-        if (this.form.rcAreas != "") {
-          if (this.form.rcAreas == "北京市" || this.form.rcAreas == "天津市") {
-            this.form.selectedOptions = [TextToCode[this.form.rcAreas].code, TextToCode[this.form.rcAreas]['市辖区'].code];
+        if (this.form.qyAreas != "") {
+          if (this.form.qyAreas == "北京市" || this.form.qyAreas == "天津市") {
+            this.form.selectedOptions = [TextToCode[this.form.qyAreas].code, TextToCode[this.form.qyAreas]['市辖区'].code];
           } else {
-            var arr = this.form.rcAreas.split("/");
+            var arr = this.form.qyAreas.split("/");
             this.form.selectedOptions = [TextToCode[arr[0]].code, TextToCode[arr[0]][arr[1]].code]
           }
         }
-        this.areas = this.form.rcAreas;
+        this.areas = this.form.qyAreas;
         this.open = true;
-        this.title = "修改人才信息";
+        this.title = "修改企业信息";
       });
     },
     /** 提交按钮 */
     submitForm() {
       this.$refs["form"].validate(valid => {
         if (valid) {
-          if (this.form.rcId != null) {
-            this.form.rcAreas = this.areas;
-            updateRc(this.form).then(response => {
+          if (this.form.qyId != null) {
+            this.form.qyAreas = this.areas;
+            updateQygl(this.form).then(response => {
               this.$modal.msgSuccess("修改成功");
               this.open = false;
               this.getList();
             });
           } else {
-            this.form.rcAreas = this.areas
-            addRc(this.form).then(response => {
+            this.form.qyAreas = this.areas;
+            addQygl(this.form).then(response => {
               this.$modal.msgSuccess("新增成功");
               this.open = false;
               this.getList();
@@ -422,9 +372,9 @@ export default {
     },
     /** 删除按钮操作 */
     handleDelete(row) {
-      const rcIds = row.rcId || this.ids;
+      const qyIds = row.qyId || this.ids;
       this.$modal.confirm('是否确认删除？').then(function () {
-        return delRc(rcIds);
+        return delQygl(qyIds);
       }).then(() => {
         this.getList();
         this.$modal.msgSuccess("删除成功");
@@ -433,10 +383,10 @@ export default {
     },
     /** 导出按钮操作 */
     handleExport() {
-      this.download('rcgl/rc/export', {
+      this.download('cygl/qygl/export', {
         ...this.queryParams
-      }, `rc_${new Date().getTime()}.xlsx`)
-    },
+      }, `qygl_${new Date().getTime()}.xlsx`)
+    }
   }
 };
 </script>

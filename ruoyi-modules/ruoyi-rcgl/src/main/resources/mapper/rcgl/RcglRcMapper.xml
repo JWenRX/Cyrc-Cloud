@@ -1,50 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ruoyi.rcgl.mapper.RcglRcMapper">
-    
+
     <resultMap type="RcglRc" id="RcglRcResult">
-        <result property="rcId"    column="rc_id"    />
-        <result property="rcCompany"    column="rc_company"    />
-        <result property="rcName"    column="rc_name"    />
-        <result property="rcResearchField"    column="rc_research_field"    />
-        <result property="rcPaperNum"    column="rc_paper_num"    />
-        <result property="rcPatentNum"    column="rc_patent_num"    />
-        <result property="rcProjectNum"    column="rc_project_num"    />
-        <result property="rcActivation"    column="rc_activation"    />
-        <result property="createBy"    column="create_by"    />
-        <result property="createTime"    column="create_time"    />
-        <result property="updateBy"    column="update_by"    />
-        <result property="updateTime"    column="update_time"    />
-        <result property="rcAreas"    column="rc_areas"    />
+        <result property="rcId" column="rc_id"/>
+        <result property="rcCompany" column="rc_company"/>
+        <result property="rcName" column="rc_name"/>
+        <result property="rcResearchField" column="rc_research_field"/>
+        <result property="rcPaperNum" column="rc_paper_num"/>
+        <result property="rcPatentNum" column="rc_patent_num"/>
+        <result property="rcProjectNum" column="rc_project_num"/>
+        <result property="rcActivation" column="rc_activation"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="rcAreas" column="rc_areas"/>
+        <association property="qy" column="qy_id" javaType="Qygl" resultMap="QyglResult"/>
+    </resultMap>
+
+    <resultMap type="Qygl" id="QyglResult">
+        <result property="qyId" column="qy_id"/>
+        <result property="qyName" column="qy_name"/>
+        <result property="qyIndustry" column="qy_industry"/>
+        <result property="qyAreas" column="qy_areas"/>
+        <result property="isDeleted" column="is_deleted"/>
     </resultMap>
 
     <sql id="selectRcglRcVo">
-        select rc_id, rc_company, rc_areas,rc_name, rc_research_field, rc_paper_num, rc_patent_num, rc_project_num, rc_activation, create_by, create_time, update_by, update_time from rcgl_rc
+        select rc_id,
+               rc_company,
+               rc_areas,
+               rc_name,
+               rc_research_field,
+               rc_paper_num,
+               rc_patent_num,
+               rc_project_num,
+               rc_activation,
+               create_by,
+               create_time,
+               update_by,
+               update_time
+        from rcgl_rc
     </sql>
 
     <select id="selectRcglRcList" parameterType="RcglRc" resultMap="RcglRcResult">
-        <include refid="selectRcglRcVo"/>
-        <where>  
-            <if test="rcCompany != null "> and rc_company like concat('%', #{rcCompany}, '%')</if>
-            <if test="rcName != null  and rcName != ''"> and rc_name like concat('%', #{rcName}, '%')</if>
-            <if test="rcResearchField != null  and rcResearchField != ''"> and rc_research_field like concat('%', #{rcResearchField}, '%')</if>
-            <if test="rcPaperNum != null "> and rc_paper_num = #{rcPaperNum}</if>
-            <if test="rcPatentNum != null "> and rc_patent_num = #{rcPatentNum}</if>
-            <if test="rcProjectNum != null "> and rc_project_num = #{rcProjectNum}</if>
-            <if test="rcActivation != null "> and rc_activation >= #{rcActivation}</if>
-            <if test="rcAreas != null "> and rc_areas like concat('%', #{rcAreas}, '%')</if>
-             and is_deleted=0
+        select r.rc_id,r.rc_company,r.rc_name,r.rc_research_field,r.rc_paper_num,
+        r.rc_patent_num,r.rc_project_num,r.rc_activation,r.rc_areas,q.qy_name
+        from rcgl_rc r
+        left join qygl q
+        on r.rc_company = q.qy_id
+        <where>
+            <if test="rcCompany != null ">and rc_company like concat('%', #{rcCompany}, '%')</if>
+            <if test="rcName != null  and rcName != ''">and rc_name like concat('%', #{rcName}, '%')</if>
+            <if test="rcResearchField != null  and rcResearchField != ''">and rc_research_field like concat('%',
+                #{rcResearchField}, '%')
+            </if>
+            <if test="rcPaperNum != null ">and rc_paper_num = #{rcPaperNum}</if>
+            <if test="rcPatentNum != null ">and rc_patent_num = #{rcPatentNum}</if>
+            <if test="rcProjectNum != null ">and rc_project_num = #{rcProjectNum}</if>
+            <if test="rcActivation != null ">and rc_activation >= #{rcActivation}</if>
+            <if test="rcAreas != null ">and rc_areas like concat('%', #{rcAreas}, '%')</if>
+            and r.is_deleted=0
         </where>
-        order by create_time desc
+        order by r.rc_activation desc
     </select>
-    
+
     <select id="selectRcglRcByRcId" parameterType="Long" resultMap="RcglRcResult">
         <include refid="selectRcglRcVo"/>
         where rc_id = #{rcId} and is_deleted=0
     </select>
-        
+
     <insert id="insertRcglRc" parameterType="RcglRc">
         insert into rcgl_rc
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -61,7 +89,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="updateBy != null">update_by,</if>
             <if test="updateTime != null">update_time,</if>
             <if test="rcAreas != null">rc_areas,</if>
-         </trim>
+        </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="rcId != null">#{rcId},</if>
             <if test="rcCompany != null">#{rcCompany},</if>
@@ -76,7 +104,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="updateBy != null">#{updateBy},</if>
             <if test="updateTime != null">#{updateTime},</if>
             <if test="rcAreas != null">#{rcAreas},</if>
-         </trim>
+        </trim>
     </insert>
 
     <update id="updateRcglRc" parameterType="RcglRc">
@@ -99,7 +127,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </update>
 
     <delete id="deleteRcglRcByRcId" parameterType="Long">
-        update rcgl_rc set is_deleted=1 where rc_id = #{rcId}
+        update rcgl_rc
+        set is_deleted=1
+        where rc_id = #{rcId}
     </delete>
 
     <delete id="deleteRcglRcByRcIds" parameterType="String">
