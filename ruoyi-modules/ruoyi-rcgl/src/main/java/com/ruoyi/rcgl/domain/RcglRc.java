@@ -27,22 +27,27 @@ public class RcglRc {
     private Long rcId;
 
     /**
+     * 姓名
+     */
+    @Excel(name = "姓名")
+    private String rcName;
+
+    /**
      * 所属机构
      */
-    @Excel(name = "所属机构")
     private Long rcCompany;
+
+    /**
+     * 所属机构-导出
+     */
+    @Excel(name = "所属机构")
+    private String qyName;
 
     /**
      * 所在区域
      */
     @Excel(name = "区域")
     private String rcAreas;
-
-    /**
-     * 姓名
-     */
-    @Excel(name = "姓名")
-    private String rcName;
 
     /**
      * 研究方向

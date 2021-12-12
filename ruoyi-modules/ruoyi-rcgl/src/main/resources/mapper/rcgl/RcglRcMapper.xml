@@ -18,7 +18,12 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
         <result property="rcAreas" column="rc_areas"/>
+        <association property="qyName" column="qy_name" javaType="java.lang.String" resultMap="QyName"/>
         <association property="qy" column="qy_id" javaType="Qygl" resultMap="QyglResult"/>
+    </resultMap>
+
+    <resultMap id="QyName" type="java.lang.String">
+        <result property="qyName" column="qy_name"/>
     </resultMap>
 
     <resultMap type="Qygl" id="QyglResult">

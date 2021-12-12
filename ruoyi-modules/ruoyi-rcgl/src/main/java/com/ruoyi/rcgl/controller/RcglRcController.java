@@ -63,7 +63,7 @@ public class RcglRcController extends BaseController
     {
         List<RcglRc> list = rcglRcService.selectRcglRcList(rcglRc);
         ExcelUtil<RcglRc> util = new ExcelUtil<RcglRc>(RcglRc.class);
-        util.exportExcel(response, list, "【请填写功能名称】数据");
+        util.exportExcel(response, list, "人才管理数据");
     }
 
     /**

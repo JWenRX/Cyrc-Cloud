@@ -26,14 +26,13 @@ import com.ruoyi.common.core.web.page.TableDataInfo;
 
 /**
  * 企业管理Controller
- * 
+ *
  * @author ljw17
  * @date 2021-12-09
  */
 @RestController
 @RequestMapping("/qygl")
-public class QyglController extends BaseController
-{
+public class QyglController extends BaseController {
     @Autowired
     private IQyglService qyglService;
 
@@ -45,8 +44,7 @@ public class QyglController extends BaseController
      */
     @RequiresPermissions("cygl:qygl:list")
     @GetMapping("/list")
-    public TableDataInfo list(Qygl qygl)
-    {
+    public TableDataInfo list(Qygl qygl) {
         startPage();
         List<Qygl> list = qyglService.selectQyglList(qygl);
         return getDataTable(list);
@@ -58,8 +56,7 @@ public class QyglController extends BaseController
     @RequiresPermissions("cygl:qygl:export")
     @Log(title = "企业管理", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
-    public void export(HttpServletResponse response, Qygl qygl)
-    {
+    public void export(HttpServletResponse response, Qygl qygl) {
         List<Qygl> list = qyglService.selectQyglList(qygl);
         ExcelUtil<Qygl> util = new ExcelUtil<Qygl>(Qygl.class);
         util.exportExcel(response, list, "企业管理数据");
@@ -70,8 +67,7 @@ public class QyglController extends BaseController
      */
     @RequiresPermissions("cygl:qygl:query")
     @GetMapping(value = "/{qyId}")
-    public AjaxResult getInfo(@PathVariable("qyId") Long qyId)
-    {
+    public AjaxResult getInfo(@PathVariable("qyId") Long qyId) {
         return AjaxResult.success(qyglService.selectQyglByQyId(qyId));
     }
 
@@ -81,8 +77,7 @@ public class QyglController extends BaseController
     @RequiresPermissions("cygl:qygl:add")
     @Log(title = "企业管理", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody Qygl qygl)
-    {
+    public AjaxResult add(@RequestBody Qygl qygl) {
         return toAjax(qyglService.insertQygl(qygl));
     }
 
@@ -92,8 +87,7 @@ public class QyglController extends BaseController
     @RequiresPermissions("cygl:qygl:edit")
     @Log(title = "企业管理", businessType = BusinessType.UPDATE)
     @PutMapping
-    public AjaxResult edit(@RequestBody Qygl qygl)
-    {
+    public AjaxResult edit(@RequestBody Qygl qygl) {
         return toAjax(qyglService.updateQygl(qygl));
     }
 
@@ -102,9 +96,8 @@ public class QyglController extends BaseController
      */
     @RequiresPermissions("cygl:qygl:remove")
     @Log(title = "企业管理", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{qyIds}")
-    public AjaxResult remove(@PathVariable Long[] qyIds)
-    {
+    @DeleteMapping("/{qyIds}")
+    public AjaxResult remove(@PathVariable Long[] qyIds) {
         return toAjax(qyglService.deleteQyglByQyIds(qyIds));
     }
 
@@ -113,8 +106,7 @@ public class QyglController extends BaseController
      */
     @RequiresPermissions("cygl:qygl:list")
     @GetMapping("/cyList")
-    public List<CyglCy> cyList()
-    {
+    public List<CyglCy> cyList() {
         List<CyglCy> cyList = cyglCyService.getCyList();
         return cyList;
     }
@@ -123,8 +115,7 @@ public class QyglController extends BaseController
      * 查询企业管理列表
      */
     @GetMapping("/qyList")
-    public List<Qygl> qyList()
-    {
+    public List<Qygl> qyList() {
         List<Qygl> qyList = qyglService.getQyList();
         return qyList;
     }
