@@ -35,8 +35,13 @@ public class Qygl {
     /**
      * 所在产业
      */
-    @Excel(name = "所在产业")
     private Long qyIndustry;
+
+    /**
+     * 所在产业
+     */
+    @Excel(name = "所在产业")
+    private String cyName;
 
     /**
      * 企业所在城市
