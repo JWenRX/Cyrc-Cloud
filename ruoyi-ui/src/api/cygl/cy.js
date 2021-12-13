@@ -42,3 +42,11 @@ export function delCy(cyId) {
     method: 'delete'
   })
 }
+
+// 产业分布
+export function selectCyDistribute() {
+  return request({
+    url: "/cygl/cy/cyDistribute",
+    method: 'get'
+  })
+}

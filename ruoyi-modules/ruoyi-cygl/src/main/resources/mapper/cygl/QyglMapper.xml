@@ -29,6 +29,19 @@
         <result property="isDeleted" column="is_deleted"/>
     </resultMap>
 
+    <resultMap type="Qygl" id="QyglResult2">
+        <result property="qyId" column="qy_id"/>
+        <result property="qyName" column="qy_name"/>
+        <result property="qyIndustry" column="qy_industry"/>
+        <result property="qyAreas" column="qy_areas"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <association property="cy" column="cy_id" javaType="CyglCy" resultMap="CyglCyResult"/>
+    </resultMap>
+
     <sql id="selectQyglVo">
         select qy_id,
                qy_name,
@@ -56,7 +69,7 @@
         order by q.create_time desc
     </select>
 
-    <select id="selectQyglByQyId" parameterType="Long" resultMap="QyglResult">
+    <select id="selectQyglByQyId" parameterType="Long" resultMap="QyglResult2">
         <include refid="selectQyglVo"/>
         where qy_id = #{qyId} and is_deleted=0
     </select>

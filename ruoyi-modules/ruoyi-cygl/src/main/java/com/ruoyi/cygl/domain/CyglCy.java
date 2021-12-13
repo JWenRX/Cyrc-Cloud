@@ -67,4 +67,9 @@ public class CyglCy {
      **/
     private Integer isDeleted;
 
+    /**
+     * 企业数
+     */
+    private Integer qyNum;
+
 }

@@ -34,6 +34,23 @@
         <result property="isDeleted" column="is_deleted"/>
     </resultMap>
 
+    <resultMap type="RcglRc" id="RcglRcResult2">
+        <result property="rcId" column="rc_id"/>
+        <result property="rcCompany" column="rc_company"/>
+        <result property="rcName" column="rc_name"/>
+        <result property="rcResearchField" column="rc_research_field"/>
+        <result property="rcPaperNum" column="rc_paper_num"/>
+        <result property="rcPatentNum" column="rc_patent_num"/>
+        <result property="rcProjectNum" column="rc_project_num"/>
+        <result property="rcActivation" column="rc_activation"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="rcAreas" column="rc_areas"/>
+        <association property="qy" column="qy_id" javaType="Qygl" resultMap="QyglResult"/>
+    </resultMap>
+
     <sql id="selectRcglRcVo">
         select rc_id,
                rc_company,
@@ -73,7 +90,7 @@
         order by r.rc_activation desc
     </select>
 
-    <select id="selectRcglRcByRcId" parameterType="Long" resultMap="RcglRcResult">
+    <select id="selectRcglRcByRcId" parameterType="Long" resultMap="RcglRcResult2">
         <include refid="selectRcglRcVo"/>
         where rc_id = #{rcId} and is_deleted=0
     </select>

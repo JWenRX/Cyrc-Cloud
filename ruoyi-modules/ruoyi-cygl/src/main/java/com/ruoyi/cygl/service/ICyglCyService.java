@@ -65,4 +65,11 @@ public interface ICyglCyService {
      * @return
      */
     List<CyglCy> getCyList();
+
+    /**
+     * 产业分布
+     *
+     * @return
+     */
+    List<CyglCy> selectCyDistribute();
 }

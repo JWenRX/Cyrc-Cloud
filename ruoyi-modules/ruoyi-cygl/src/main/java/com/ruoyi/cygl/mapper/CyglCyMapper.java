@@ -67,4 +67,11 @@ public interface CyglCyMapper {
      * @return
      */
     public List<CyglCy> getCyList();
+
+    /**
+     * 产业分布
+     *
+     * @return
+     */
+    public List<CyglCy> selectCyDistribute();
 }

@@ -15,6 +15,16 @@
         <result property="isDeleted" column="is_deleted"/>
     </resultMap>
 
+    <resultMap type="CyglCy" id="CyDistributeResult">
+        <result property="cyDirection" column="cy_direction"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <association property="qyNum" column="qy_num" javaType="java.lang.Integer" resultMap="QyNum"/>
+    </resultMap>
+
+    <resultMap id="QyNum" type="java.lang.Integer">
+        <result property="qyNum" column="qy_num"/>
+    </resultMap>
+
     <sql id="selectCyglCyVo">
         select cy_id,
                cy_name,
@@ -46,6 +56,13 @@
         select *
         from cygl_cy
         where is_deleted = 0;
+    </select>
+
+    <select id="selectCyDistribute" resultMap="CyDistributeResult">
+        SELECT count(1) as qy_num, cy_direction
+        FROM cygl_cy
+        WHERE is_deleted = 0
+        GROUP BY cy_direction
     </select>
 
     <insert id="insertCyglCy" parameterType="CyglCy">

@@ -102,4 +102,11 @@ public class CyglCyController extends BaseController
     {
         return toAjax(cyglCyService.deleteCyglCyByCyIds(cyIds));
     }
+
+    @RequestMapping("/cyDistribute")
+    public List<CyglCy> selectCyDistribute(){
+        List<CyglCy> cyList = cyglCyService.selectCyDistribute();
+        System.out.println(cyList);
+        return cyList;
+    }
 }
