@@ -106,7 +106,6 @@ public class CyglCyController extends BaseController
     @RequestMapping("/cyDistribute")
     public List<CyglCy> selectCyDistribute(){
         List<CyglCy> cyList = cyglCyService.selectCyDistribute();
-        System.out.println(cyList);
         return cyList;
     }
 }

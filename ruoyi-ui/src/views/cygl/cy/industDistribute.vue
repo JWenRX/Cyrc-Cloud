@@ -19,6 +19,7 @@ export default {
 
   data() {
     return {
+      //饼状图
       fanOption: {
         title: {
           text: '产业分布情况',
@@ -66,6 +67,7 @@ export default {
           data: []
         }]
       },
+      //柱状图
       barOption: {
         tooltip: {
           trigger: 'axis',

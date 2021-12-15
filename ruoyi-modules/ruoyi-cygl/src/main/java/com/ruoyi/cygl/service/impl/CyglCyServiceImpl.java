@@ -111,7 +111,6 @@ public class CyglCyServiceImpl implements ICyglCyService {
     @Override
     public List<CyglCy> selectCyDistribute() {
         List<CyglCy> cyList = cyglCyMapper.selectCyDistribute();
-        System.out.println(cyList);
         return cyList;
     }
 }
