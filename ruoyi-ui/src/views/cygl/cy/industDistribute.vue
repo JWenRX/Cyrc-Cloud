@@ -116,7 +116,6 @@ export default {
       await this.initChartData();
       echarts.init(document.getElementById('fan')).setOption(this.fanOption);
       echarts.init(document.getElementById('bar')).setOption(this.barOption);
-      debugger
     },
 
     /** 初始化图表数据 **/
@@ -127,7 +126,7 @@ export default {
       });
 
       for (let i = 0; i < this.cyList.length; i++) {
-        this.fanOption.series[0].data.push({'value': this.cyList[i].qyNum, 'name': this.cyList[i].cyDirection})
+        this.fanOption.series[0].data.push({'value': this.cyList[i].cyNum, 'name': this.cyList[i].cyDirection})
       }
     }
 

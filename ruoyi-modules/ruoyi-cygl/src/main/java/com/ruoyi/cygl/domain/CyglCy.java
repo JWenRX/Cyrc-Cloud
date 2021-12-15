@@ -70,6 +70,6 @@ public class CyglCy {
     /**
      * 企业数
      */
-    private Integer qyNum;
+    private Integer cyNum;
 
 }
