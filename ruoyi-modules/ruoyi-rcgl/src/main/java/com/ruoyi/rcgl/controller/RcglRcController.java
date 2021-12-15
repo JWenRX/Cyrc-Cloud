@@ -117,7 +117,6 @@ public class RcglRcController extends BaseController
     public List<Qygl> qyList()
     {
         List<Qygl> qyList = remoteQyglService.qyList();
-        System.out.println(qyList);
         return qyList;
     }
 }

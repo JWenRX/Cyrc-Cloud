@@ -2,6 +2,7 @@ package com.ruoyi.qygl.mapper;
 
 import java.util.List;
 
+import com.ruoyi.cygl.domain.CyglCy;
 import com.ruoyi.qygl.domain.Qygl;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -67,4 +68,10 @@ public interface QyglMapper {
      * @return
      */
     public List<Qygl> getQyList();
+
+    /**
+     * 企业发展情况
+     * @return
+     */
+    public List<Qygl> selectCyDevelop();
 }

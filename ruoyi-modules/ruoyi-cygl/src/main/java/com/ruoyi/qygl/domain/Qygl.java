@@ -81,5 +81,10 @@ public class Qygl {
      */
     private CyglCy cy;
 
+    /**
+     * 企业数量
+     */
+    private Integer qyNum;
+
 
 }

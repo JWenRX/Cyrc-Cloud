@@ -2,6 +2,7 @@ package com.ruoyi.qygl.service;
 
 import java.util.List;
 
+import com.ruoyi.cygl.domain.CyglCy;
 import com.ruoyi.qygl.domain.Qygl;
 
 /**
@@ -65,4 +66,11 @@ public interface IQyglService {
      * @return
      */
     public List<Qygl> getQyList();
+
+    /**
+     * 企业发展情况
+     *
+     * @return
+     */
+    List<Qygl> selectCyDevelop();
 }

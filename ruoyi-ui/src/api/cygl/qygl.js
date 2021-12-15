@@ -50,3 +50,11 @@ export function cyList() {
     method: 'get'
   })
 }
+
+// 企业发展
+export function selectCyDevelop() {
+  return request({
+    url: "/cygl/qygl/cyDevelop",
+    method: 'get'
+  })
+}

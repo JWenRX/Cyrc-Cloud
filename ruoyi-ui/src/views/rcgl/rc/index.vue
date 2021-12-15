@@ -118,7 +118,7 @@
       <el-table-column type="selection" width="55" align="center"/>
       <el-table-column align="center" type="index" width="60" label="序号">
         <template slot-scope="scope">
-          {{(queryParams.pageNum - 1) * queryParams.pageSize + scope.$index + 1}}
+          {{ (queryParams.pageNum - 1) * queryParams.pageSize + scope.$index + 1 }}
         </template>
       </el-table-column>
       <el-table-column label="姓名" align="center" prop="rcName"/>
@@ -166,8 +166,7 @@
           <el-input v-model="form.rcName" placeholder="请输入姓名"/>
         </el-form-item>
         <el-form-item label="所属机构" prop="rcCompany">
-<!--          <el-input v-model="form.rcCompany" placeholder="请输入所属机构"/>-->
-          <el-select v-model="form.rcCompany" placeholder="请选择所属机构" style="width: 380px">
+          <el-select v-model="form.rcCompany" placeholder="请选择所属机构" style="width: 380px" filterable>
             <el-option
               v-for="item in qyList"
               :key="item.qyId"
@@ -184,6 +183,7 @@
               expand-trigger="hover"
               size="medium"
               style="width: 380px"
+              filterable
               :props="cateProps"
               v-model="form.selectedOptions"
               @change="rcAreasChange"
@@ -215,7 +215,7 @@
 </template>
 
 <script>
-import {listRc, getRc, delRc, addRc, updateRc,qyList} from "@/api/rcgl/rc";
+import {listRc, getRc, delRc, addRc, updateRc, qyList} from "@/api/rcgl/rc";
 import {provinceAndCityDataPlus, CodeToText, TextToCode} from 'element-china-area-data' // 4.省市区带‘全部’三级联动选择
 
 export default {
@@ -268,7 +268,7 @@ export default {
         label: 'label',
         children: 'children',
       },
-      qyList:[],
+      qyList: [],
     };
   },
 
@@ -326,7 +326,7 @@ export default {
       var loc = ''
       for (let i = 0; i < this.form.selectedOptions.length; i++) {
         var addr = CodeToText[this.form.selectedOptions[i]]
-        if (addr == "北京市" || addr == "天津市") {
+        if (addr == "北京市" || addr == "天津市" || addr == "上海市") {
           loc = addr;
           break;
         }
@@ -343,7 +343,7 @@ export default {
       var loc = ''
       for (let i = 0; i < this.selectedOptions.length; i++) {
         var addr = CodeToText[this.selectedOptions[i]]
-        if (addr == "北京市" || addr == "天津市") {
+        if (addr == "北京市" || addr == "天津市" || addr=="上海市") {
           loc = addr;
           break;
         }
@@ -386,7 +386,7 @@ export default {
       getRc(rcId).then(response => {
         this.form = response.data;
         if (this.form.rcAreas != "") {
-          if (this.form.rcAreas == "北京市" || this.form.rcAreas == "天津市") {
+          if (this.form.rcAreas == "北京市" || this.form.rcAreas == "天津市" ||this.form.rcAreas=="上海市") {
             this.form.selectedOptions = [TextToCode[this.form.rcAreas].code, TextToCode[this.form.rcAreas]['市辖区'].code];
           } else {
             var arr = this.form.rcAreas.split("/");

@@ -102,4 +102,14 @@ public class QyglServiceImpl implements IQyglService {
     public List<Qygl> getQyList() {
         return qyglMapper.getQyList();
     }
+
+    /**
+     * 企业发展情况
+     *
+     * @return
+     */
+    @Override
+    public List<Qygl> selectCyDevelop() {
+        return qyglMapper.selectCyDevelop();
+    }
 }

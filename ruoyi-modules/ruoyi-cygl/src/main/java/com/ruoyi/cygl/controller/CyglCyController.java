@@ -24,14 +24,13 @@ import com.ruoyi.common.core.web.page.TableDataInfo;
 
 /**
  * 产业管理Controller
- * 
+ *
  * @author ljw17
  * @date 2021-12-08
  */
 @RestController
 @RequestMapping("/cy")
-public class CyglCyController extends BaseController
-{
+public class CyglCyController extends BaseController {
     @Autowired
     private ICyglCyService cyglCyService;
 
@@ -40,8 +39,7 @@ public class CyglCyController extends BaseController
      */
     @RequiresPermissions("cygl:cy:list")
     @GetMapping("/list")
-    public TableDataInfo list(CyglCy cyglCy)
-    {
+    public TableDataInfo list(CyglCy cyglCy) {
         startPage();
         List<CyglCy> list = cyglCyService.selectCyglCyList(cyglCy);
         return getDataTable(list);
@@ -53,8 +51,7 @@ public class CyglCyController extends BaseController
     @RequiresPermissions("cygl:cy:export")
     @Log(title = "产业管理", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
-    public void export(HttpServletResponse response, CyglCy cyglCy)
-    {
+    public void export(HttpServletResponse response, CyglCy cyglCy) {
         List<CyglCy> list = cyglCyService.selectCyglCyList(cyglCy);
         ExcelUtil<CyglCy> util = new ExcelUtil<CyglCy>(CyglCy.class);
         util.exportExcel(response, list, "产业管理数据");
@@ -65,8 +62,7 @@ public class CyglCyController extends BaseController
      */
     @RequiresPermissions("cygl:cy:query")
     @GetMapping(value = "/{cyId}")
-    public AjaxResult getInfo(@PathVariable("cyId") Long cyId)
-    {
+    public AjaxResult getInfo(@PathVariable("cyId") Long cyId) {
         return AjaxResult.success(cyglCyService.selectCyglCyByCyId(cyId));
     }
 
@@ -76,8 +72,7 @@ public class CyglCyController extends BaseController
     @RequiresPermissions("cygl:cy:add")
     @Log(title = "产业管理", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody CyglCy cyglCy)
-    {
+    public AjaxResult add(@RequestBody CyglCy cyglCy) {
         return toAjax(cyglCyService.insertCyglCy(cyglCy));
     }
 
@@ -87,8 +82,7 @@ public class CyglCyController extends BaseController
     @RequiresPermissions("cygl:cy:edit")
     @Log(title = "产业管理", businessType = BusinessType.UPDATE)
     @PutMapping
-    public AjaxResult edit(@RequestBody CyglCy cyglCy)
-    {
+    public AjaxResult edit(@RequestBody CyglCy cyglCy) {
         return toAjax(cyglCyService.updateCyglCy(cyglCy));
     }
 
@@ -97,14 +91,18 @@ public class CyglCyController extends BaseController
      */
     @RequiresPermissions("cygl:cy:remove")
     @Log(title = "产业管理", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{cyIds}")
-    public AjaxResult remove(@PathVariable Long[] cyIds)
-    {
+    @DeleteMapping("/{cyIds}")
+    public AjaxResult remove(@PathVariable Long[] cyIds) {
         return toAjax(cyglCyService.deleteCyglCyByCyIds(cyIds));
     }
 
+    /**
+     * 获取产业分布
+     *
+     * @return
+     */
     @RequestMapping("/cyDistribute")
-    public List<CyglCy> selectCyDistribute(){
+    public List<CyglCy> selectCyDistribute() {
         List<CyglCy> cyList = cyglCyService.selectCyDistribute();
         return cyList;
     }

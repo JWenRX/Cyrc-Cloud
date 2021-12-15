@@ -119,4 +119,15 @@ public class QyglController extends BaseController {
         List<Qygl> qyList = qyglService.getQyList();
         return qyList;
     }
+
+    /**
+     * 获取企业发展情况
+     *
+     * @return
+     */
+    @RequestMapping("/cyDevelop")
+    public List<Qygl> selectCyDevelop() {
+        List<Qygl> qyList = qyglService.selectCyDevelop();
+        return qyList;
+    }
 }

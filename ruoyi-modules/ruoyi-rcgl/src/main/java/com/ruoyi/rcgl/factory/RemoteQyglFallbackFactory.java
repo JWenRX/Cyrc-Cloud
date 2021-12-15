@@ -16,23 +16,19 @@ import java.util.List;
 
 /**
  * 用户服务降级处理
- * 
+ *
  * @author ruoyi
  */
 @Component
-public class RemoteQyglFallbackFactory implements FallbackFactory<RemoteQyglService>
-{
+public class RemoteQyglFallbackFactory implements FallbackFactory<RemoteQyglService> {
     private static final Logger log = LoggerFactory.getLogger(RemoteQyglFallbackFactory.class);
 
     @Override
-    public RemoteQyglService create(Throwable throwable)
-    {
+    public RemoteQyglService create(Throwable throwable) {
         log.error("企业服务调用失败:{}", throwable.getMessage());
-        return new RemoteQyglService()
-        {
+        return new RemoteQyglService() {
             @Override
-            public List<Qygl> qyList()
-            {
+            public List<Qygl> qyList() {
                 List<Qygl> list = new ArrayList<>();
                 return list;
             }

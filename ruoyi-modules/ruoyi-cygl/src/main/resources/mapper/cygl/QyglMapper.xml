@@ -42,6 +42,15 @@
         <association property="cy" column="cy_id" javaType="CyglCy" resultMap="CyglCyResult"/>
     </resultMap>
 
+    <resultMap type="Qygl" id="CyDevelopResult">
+        <result property="cyName" column="cy_name"/>
+        <association property="qyNum" column="qy_num" javaType="java.lang.Integer" resultMap="QyNum"/>
+    </resultMap>
+
+    <resultMap id="QyNum" type="java.lang.Integer">
+        <result property="qyNum" column="qy_num"/>
+    </resultMap>
+
     <sql id="selectQyglVo">
         select qy_id,
                qy_name,
@@ -74,10 +83,16 @@
         where qy_id = #{qyId} and is_deleted=0
     </select>
 
-    <select id="getQyList" resultMap="QyglResult">
+    <select id="getQyList" resultMap="QyglResult2">
         select *
         from qygl
         where is_deleted = 0;
+    </select>
+
+    <select id="selectCyDevelop" resultMap="CyDevelopResult">
+        SELECT count(1) as qy_num,c.cy_name
+        FROM qygl q left join cygl_cy c on c.cy_id=q.qy_industry
+        WHERE q.is_deleted=0 GROUP BY q.qy_industry
     </select>
 
     <insert id="insertQygl" parameterType="Qygl">

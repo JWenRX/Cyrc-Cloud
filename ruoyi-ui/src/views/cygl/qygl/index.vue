@@ -98,7 +98,7 @@
       <el-table-column type="selection" width="55" align="center"/>
       <el-table-column align="center" type="index" width="60" label="序号">
         <template slot-scope="scope">
-          {{(queryParams.pageNum - 1) * queryParams.pageSize + scope.$index + 1}}
+          {{ (queryParams.pageNum - 1) * queryParams.pageSize + scope.$index + 1 }}
         </template>
       </el-table-column>
       <el-table-column label="企业名称" align="center" prop="qyName"/>
@@ -141,7 +141,7 @@
           <el-input v-model="form.qyName" placeholder="请输入企业名称"/>
         </el-form-item>
         <el-form-item label="所属产业" prop="isDeleted">
-          <el-select v-model="form.qyIndustry" placeholder="请选择企业所属产业" style="width: 380px">
+          <el-select v-model="form.qyIndustry" placeholder="请选择企业所属产业" style="width: 380px" filterable>
             <el-option
               v-for="item in cyList"
               :key="item.cyId"
@@ -157,6 +157,7 @@
               :options="options"
               expand-trigger="hover"
               size="medium"
+              filterable
               :props="cateProps"
               style="width: 380px"
               v-model="form.selectedOptions"
@@ -238,7 +239,7 @@ export default {
       var loc = ''
       for (let i = 0; i < this.form.selectedOptions.length; i++) {
         var addr = CodeToText[this.form.selectedOptions[i]]
-        if (addr == "北京市" || addr == "天津市") {
+        if (addr == "北京市" || addr == "天津市" || addr == "上海市") {
           loc = addr;
           break;
         }
@@ -255,7 +256,7 @@ export default {
       var loc = ''
       for (let i = 0; i < this.selectedOptions.length; i++) {
         var addr = CodeToText[this.selectedOptions[i]]
-        if (addr == "北京市" || addr == "天津市") {
+        if (addr == "北京市" || addr == "天津市" || addr == "上海市") {
           loc = addr;
           break;
         }
@@ -336,7 +337,7 @@ export default {
       getQygl(qyId).then(response => {
         this.form = response.data;
         if (this.form.qyAreas != "") {
-          if (this.form.qyAreas == "北京市" || this.form.qyAreas == "天津市") {
+          if (this.form.qyAreas == "北京市" || this.form.qyAreas == "天津市" || this.form.qyAreas == "上海市") {
             this.form.selectedOptions = [TextToCode[this.form.qyAreas].code, TextToCode[this.form.qyAreas]['市辖区'].code];
           } else {
             var arr = this.form.qyAreas.split("/");
