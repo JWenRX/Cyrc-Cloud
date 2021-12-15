@@ -25,6 +25,21 @@
           </el-option>
         </el-select>
       </el-form-item>
+      <el-form-item label="人才级别" prop="rcLevel">
+        <el-select v-model="queryParams.rcLevel"
+                   placeholder="请选择人才级别"
+                   clearable
+                   filterable
+                   @keyup.enter.native="handleQuery"
+                   size="small">
+          <el-option
+            v-for="item in this.rcLevels"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </el-form-item>
       <el-form-item label="研究方向" prop="rcResearchField">
         <el-input
           v-model="queryParams.rcResearchField"
@@ -125,6 +140,7 @@
       <el-table-column label="所属机构" align="center" prop="qy.qyName"/>
       <el-table-column label="所在区域" align="center" prop="rcAreas"/>
       <el-table-column label="研究方向" align="center" prop="rcResearchField"/>
+      <el-table-column label="人才级别" align="center" prop="rcLevel"/>
       <el-table-column label="论文数" align="center" prop="rcPaperNum"/>
       <el-table-column label="专利数" align="center" prop="rcPatentNum"/>
       <el-table-column label="项目数" align="center" prop="rcProjectNum"/>
@@ -172,6 +188,16 @@
               :key="item.qyId"
               :label="item.qyName"
               :value="item.qyId">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="人才级别" prop="rcLevel">
+          <el-select v-model="form.rcLevel" placeholder="请选择人才级别" style="width: 380px" filterable>
+            <el-option
+              v-for="item in rcLevels"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
             </el-option>
           </el-select>
         </el-form-item>
@@ -251,7 +277,8 @@ export default {
         rcPatentNum: null,
         rcProjectNum: null,
         rcActivation: null,
-        rcAreas: null
+        rcAreas: null,
+        rcLevel: null
       },
       // 表单参数
       form: {},
@@ -269,6 +296,19 @@ export default {
         children: 'children',
       },
       qyList: [],
+      rcLevels: [{
+        value: '院士',
+        label: '院士'
+      }, {
+        value: '国家级',
+        label: '国家级'
+      }, {
+        value: '省级',
+        label: '省级'
+      }, {
+        value: '市级',
+        label: '市级'
+      }],
     };
   },
 
@@ -317,6 +357,7 @@ export default {
         updateBy: null,
         updateTime: null,
         rcAreas: null,
+        rcLevel: null,
         selectedOptions: []
       };
       this.resetForm("form");

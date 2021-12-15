@@ -18,6 +18,7 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
         <result property="rcAreas" column="rc_areas"/>
+        <result property="rcLevel" column="rc_level"/>
         <association property="qyName" column="qy_name" javaType="java.lang.String" resultMap="QyName"/>
         <association property="qy" column="qy_id" javaType="Qygl" resultMap="QyglResult"/>
     </resultMap>
@@ -48,6 +49,7 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
         <result property="rcAreas" column="rc_areas"/>
+        <result property="rcLevel" column="rc_level"/>
         <association property="qy" column="qy_id" javaType="Qygl" resultMap="QyglResult"/>
     </resultMap>
 
@@ -61,6 +63,7 @@
                rc_patent_num,
                rc_project_num,
                rc_activation,
+               rc_level,
                create_by,
                create_time,
                update_by,
@@ -69,7 +72,7 @@
     </sql>
 
     <select id="selectRcglRcList" parameterType="RcglRc" resultMap="RcglRcResult">
-        select r.rc_id,r.rc_company,r.rc_name,r.rc_research_field,r.rc_paper_num,
+        select r.rc_id,r.rc_company,r.rc_name,r.rc_research_field,r.rc_paper_num,r.rc_level,
         r.rc_patent_num,r.rc_project_num,r.rc_activation,r.rc_areas,q.qy_name
         from rcgl_rc r
         left join qygl q
@@ -85,6 +88,7 @@
             <if test="rcProjectNum != null ">and rc_project_num = #{rcProjectNum}</if>
             <if test="rcActivation != null ">and rc_activation >= #{rcActivation}</if>
             <if test="rcAreas != null ">and rc_areas like concat('%', #{rcAreas}, '%')</if>
+            <if test="rcLevel != null ">and rc_level like concat('%', #{rcLevel}, '%')</if>
             and r.is_deleted=0
         </where>
         order by r.rc_activation desc
@@ -111,6 +115,7 @@
             <if test="updateBy != null">update_by,</if>
             <if test="updateTime != null">update_time,</if>
             <if test="rcAreas != null">rc_areas,</if>
+            <if test="rcLevel != null">rc_level,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="rcId != null">#{rcId},</if>
@@ -126,6 +131,7 @@
             <if test="updateBy != null">#{updateBy},</if>
             <if test="updateTime != null">#{updateTime},</if>
             <if test="rcAreas != null">#{rcAreas},</if>
+            <if test="rcLevel != null">#{rcLevel},</if>
         </trim>
     </insert>
 
@@ -144,6 +150,7 @@
             <if test="updateBy != null">update_by = #{updateBy},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>
             <if test="rcAreas != null">rc_areas = #{rcAreas},</if>
+            <if test="rcLevel != null">rc_level = #{rcLevel},</if>
         </trim>
         where rc_id = #{rcId}
     </update>

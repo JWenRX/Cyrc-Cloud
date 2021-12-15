@@ -56,6 +56,12 @@ public class RcglRc {
     private String rcResearchField;
 
     /**
+     * 研究方向
+     */
+    @Excel(name = "人才级别")
+    private String rcLevel;
+
+    /**
      * 论文数
      */
     @Excel(name = "论文数")
