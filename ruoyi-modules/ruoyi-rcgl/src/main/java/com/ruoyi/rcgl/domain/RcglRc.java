@@ -117,4 +117,9 @@ public class RcglRc {
      */
     private Qygl qy;
 
+    /**
+     * 高级人才分布数量
+     */
+    private Integer rcNum;
+
 }

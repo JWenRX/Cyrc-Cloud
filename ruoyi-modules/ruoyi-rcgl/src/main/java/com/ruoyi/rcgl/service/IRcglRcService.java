@@ -58,4 +58,11 @@ public interface IRcglRcService {
      * @return 结果
      */
     public int deleteRcglRcByRcId(Long rcId);
+
+    /**
+     * 高级人才分布
+     *
+     * @return
+     */
+    List<RcglRc> selectRcDistribute();
 }

@@ -60,4 +60,11 @@ public interface RcglRcMapper {
      * @return 结果
      */
     public int deleteRcglRcByRcIds(Long[] rcIds);
+
+    /**
+     * 人才级别分布
+     *
+     * @return
+     */
+    public List<RcglRc> selectRcDistribute();
 }

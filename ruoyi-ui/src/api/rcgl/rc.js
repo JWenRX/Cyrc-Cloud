@@ -50,3 +50,11 @@ export function qyList() {
     method: 'get'
   })
 }
+
+// 查询高级人才分布
+export function selectRcDistribute() {
+  return request({
+    url: '/rcgl/rc/rcDistribute',
+    method: 'get'
+  })
+}

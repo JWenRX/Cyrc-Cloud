@@ -1,19 +1,18 @@
 <template>
   <div class="app-container">
     <el-row>
-      <el-col :span="11">
-        <div id="radar" class="grid-content" :style="{width: '570px', height: '600px'}"></div>
+      <el-col :span="12">
+        <div id="radar" class="grid-content" :style="{width: '600px', height: '600px'}"></div>
       </el-col>
-      <el-col :span="13">
-        <div id="bar" class="grid-content" :style="{width: '670px', height: '550px'}"></div>
+      <el-col :span="12">
+        <div id="bar" class="grid-content" :style="{width: '620px', height: '560px'}"></div>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import {selectCyDistribute} from "@/api/cygl/cy";
-import {selectCyDevelop} from "@/api/cygl/qygl";
+import {selectRcDistribute} from "@/api/rcgl/rc";
 import * as echarts from 'echarts';
 
 export default {
@@ -31,12 +30,12 @@ export default {
         radar: {
           // shape: 'circle',
           indicator: [
-            { name: 'Sales', max: 6500 },
-            { name: 'Administration', max: 16000 },
-            { name: 'Information Technology', max: 30000 },
-            { name: 'Customer Support', max: 38000 },
-            { name: 'Development', max: 52000 },
-            { name: 'Marketing', max: 25000 }
+            {name: 'Sales', max: 6500},
+            {name: 'Administration', max: 16000},
+            {name: 'Information Technology', max: 30000},
+            {name: 'Customer Support', max: 38000},
+            {name: 'Development', max: 52000},
+            {name: 'Marketing', max: 25000}
           ]
         },
         series: [
@@ -58,39 +57,57 @@ export default {
       },
       //柱状图
       barOption: {
+        title: {
+          text: '高端人才分布',
+          left: 'center',
+          top: "5%",
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow'
+          }
+        },
+        grid: {
+          left: '8%',
+          right: '10%',
+          bottom: '3%',
+          containLabel: true
+        },
         xAxis: {
+          name: '人才级别',
           type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+          data: [],
         },
         yAxis: {
+          name: '人数',
           type: 'value'
         },
         series: [
           {
-            data: [120, 200, 150, 80, 70, 110, 130],
+            data: [],
             type: 'bar',
+            barWidth: '60%',
             itemStyle: {
-              barBorderRadius: [2, 2, 0, 0], //柱体圆角
-              color: new echarts.graphic.LinearGradient(
-                //前四个参数用于配置渐变色的起止位置，这四个参数依次对应 右下左上 四个方位。也就是从右边开始顺时针方向。
-                //通过修改前4个参数，可以实现不同的渐变方向
-                /*第五个参数则是一个数组，用于配置颜色的渐变过程。
-                  每项为一个对象，包含offset和color两个参数
-                */
-                0, 0, 0, 1, [{//代表渐变色从正上方开始
-                  offset: 0, //offset范围是0~1，用于表示位置，0是指0%处的颜色
-                  color: '#005BEA'
-                }, //柱图渐变色
-                  {
-                    offset: 1, //指100%处的颜色
-                    color: '#00C6FB'
-                  }
-                ]
-              ),
-            }
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                {offset: 0, color: '#188df0'},
+                {offset: 0.5, color: '#188df0'},
+                {offset: 1, color: '#83bff6'}
+              ])
+            },
+            emphasis: {
+              itemStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {offset: 0, color: '#83bff6'},
+                  {offset: 0.7, color: '#2378f7'},
+                  {offset: 1, color: '#2378f7'}
+                ])
+              }
+            },
           }
         ]
-      }
+      },
+      rcList: []
     }
   },
   created() {
@@ -101,29 +118,31 @@ export default {
   methods: {
     /** 初始化图表 **/
     async getChart() {
+      await this.initChartData();
       echarts.init(document.getElementById('radar')).setOption(this.radarOption);
       echarts.init(document.getElementById('bar')).setOption(this.barOption);
     },
 
     /** 初始化图表数据 **/
     async initChartData() {
-      //查询产业分布情况
-      await selectCyDistribute().then(response => {
-        this.cyList = response;
+      //查询高级人才分布情况
+      await selectRcDistribute().then(response => {
+        this.rcList = response;
       });
 
       //查询企业发展情况
-      await selectCyDevelop().then(response => {
-        this.qyList = response;
-      });
+      // await selectCyDevelop().then(response => {
+      //   this.qyList = response;
+      // });
 
-      for (let i = 0; i < this.cyList.length; i++) {
-        this.fanOption.series[0].data.push({'value': this.cyList[i].cyNum, 'name': this.cyList[i].cyDirection})
+      // for (let i = 0; i < this.cyList.length; i++) {
+      //   this.fanOption.series[0].data.push({'value': this.cyList[i].cyNum, 'name': this.cyList[i].cyDirection})
+      // }
+      for (let i = 0; i < this.rcList.length; i++) {
+        this.barOption.xAxis.data.push(this.rcList[i].rcLevel)
+        this.barOption.series[0].data.push(this.rcList[i].rcNum)
       }
-      for (let i = 0; i < this.qyList.length; i++) {
-        this.barOption.yAxis[0].data.push(this.qyList[i].cyName)
-        this.barOption.series[0].data.push(this.qyList[i].qyNum)
-      }
+      console.log(this.barOption.xAxis.data)
     }
   }
 };

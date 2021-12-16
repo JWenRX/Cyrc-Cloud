@@ -53,6 +53,15 @@
         <association property="qy" column="qy_id" javaType="Qygl" resultMap="QyglResult"/>
     </resultMap>
 
+    <resultMap type="RcglRc" id="RcDistributeResult">
+        <result property="rcLevel" column="rc_level"/>
+        <association property="rcNum" column="rc_num" javaType="java.lang.Integer" resultMap="RcNum"/>
+    </resultMap>
+
+    <resultMap id="RcNum" type="java.lang.Integer">
+        <result property="rcNum" column="rc_num"/>
+    </resultMap>
+
     <sql id="selectRcglRcVo">
         select rc_id,
                rc_company,
@@ -97,6 +106,13 @@
     <select id="selectRcglRcByRcId" parameterType="Long" resultMap="RcglRcResult2">
         <include refid="selectRcglRcVo"/>
         where rc_id = #{rcId} and is_deleted=0
+    </select>
+
+    <select id="selectRcDistribute" resultMap="RcDistributeResult">
+        SELECT count(1) as rc_num, rc_level
+        from rcgl_rc
+        WHERE is_deleted = 0
+        GROUP BY rc_level
     </select>
 
     <insert id="insertRcglRc" parameterType="RcglRc">

@@ -27,14 +27,13 @@ import com.ruoyi.common.core.web.page.TableDataInfo;
 
 /**
  * 【请填写功能名称】Controller
- * 
+ *
  * @author ruoyi
  * @date 2021-12-07
  */
 @RestController
 @RequestMapping("/rc")
-public class RcglRcController extends BaseController
-{
+public class RcglRcController extends BaseController {
     @Autowired
     private IRcglRcService rcglRcService;
 
@@ -46,8 +45,7 @@ public class RcglRcController extends BaseController
      */
     @RequiresPermissions("rcgl:rc:list")
     @GetMapping("/list")
-    public TableDataInfo list(RcglRc rcglRc)
-    {
+    public TableDataInfo list(RcglRc rcglRc) {
         startPage();
         List<RcglRc> list = rcglRcService.selectRcglRcList(rcglRc);
         return getDataTable(list);
@@ -59,8 +57,7 @@ public class RcglRcController extends BaseController
     @RequiresPermissions("rcgl:rc:export")
     @Log(title = "导出人才信息表", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
-    public void export(HttpServletResponse response, RcglRc rcglRc)
-    {
+    public void export(HttpServletResponse response, RcglRc rcglRc) {
         List<RcglRc> list = rcglRcService.selectRcglRcList(rcglRc);
         ExcelUtil<RcglRc> util = new ExcelUtil<RcglRc>(RcglRc.class);
         util.exportExcel(response, list, "人才管理数据");
@@ -71,8 +68,7 @@ public class RcglRcController extends BaseController
      */
     @RequiresPermissions("rcgl:rc:query")
     @GetMapping(value = "/{rcId}")
-    public AjaxResult getInfo(@PathVariable("rcId") Long rcId)
-    {
+    public AjaxResult getInfo(@PathVariable("rcId") Long rcId) {
         return AjaxResult.success(rcglRcService.selectRcglRcByRcId(rcId));
     }
 
@@ -82,8 +78,7 @@ public class RcglRcController extends BaseController
     @RequiresPermissions("rcgl:rc:add")
     @Log(title = "新增人才", businessType = BusinessType.INSERT)
     @PostMapping
-    public AjaxResult add(@RequestBody RcglRc rcglRc)
-    {
+    public AjaxResult add(@RequestBody RcglRc rcglRc) {
         return toAjax(rcglRcService.insertRcglRc(rcglRc));
     }
 
@@ -93,8 +88,7 @@ public class RcglRcController extends BaseController
     @RequiresPermissions("rcgl:rc:edit")
     @Log(title = "修改人才信息", businessType = BusinessType.UPDATE)
     @PutMapping
-    public AjaxResult edit(@RequestBody RcglRc rcglRc)
-    {
+    public AjaxResult edit(@RequestBody RcglRc rcglRc) {
         return toAjax(rcglRcService.updateRcglRc(rcglRc));
     }
 
@@ -103,9 +97,8 @@ public class RcglRcController extends BaseController
      */
     @RequiresPermissions("rcgl:rc:remove")
     @Log(title = "删除人才信息", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{rcIds}")
-    public AjaxResult remove(@PathVariable Long[] rcIds)
-    {
+    @DeleteMapping("/{rcIds}")
+    public AjaxResult remove(@PathVariable Long[] rcIds) {
         return toAjax(rcglRcService.deleteRcglRcByRcIds(rcIds));
     }
 
@@ -114,9 +107,19 @@ public class RcglRcController extends BaseController
      */
     @RequiresPermissions("rcgl:rc:list")
     @GetMapping("/qyList")
-    public List<Qygl> qyList()
-    {
+    public List<Qygl> qyList() {
         List<Qygl> qyList = remoteQyglService.qyList();
         return qyList;
+    }
+
+    /**
+     * 获取高级人才分布
+     *
+     * @return
+     */
+    @RequestMapping("/rcDistribute")
+    public List<RcglRc> selectRyDistribute() {
+        List<RcglRc> ryList = rcglRcService.selectRcDistribute();
+        return ryList;
     }
 }

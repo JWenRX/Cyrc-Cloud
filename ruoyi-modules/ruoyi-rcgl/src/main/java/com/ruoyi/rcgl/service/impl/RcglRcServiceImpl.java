@@ -92,4 +92,14 @@ public class RcglRcServiceImpl implements IRcglRcService {
     public int deleteRcglRcByRcId(Long rcId) {
         return rcglRcMapper.deleteRcglRcByRcId(rcId);
     }
+
+    /**
+     * 高级人才分布
+     *
+     * @return
+     */
+    @Override
+    public List<RcglRc> selectRcDistribute() {
+        return rcglRcMapper.selectRcDistribute();
+    }
 }
