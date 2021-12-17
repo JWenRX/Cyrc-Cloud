@@ -67,4 +67,11 @@ public interface RcglRcMapper {
      * @return
      */
     public List<RcglRc> selectRcDistribute();
+
+    /**
+     * 人才领域分布
+     *
+     * @return
+     */
+    public List<RcglRc> selectRcDirection();
 }

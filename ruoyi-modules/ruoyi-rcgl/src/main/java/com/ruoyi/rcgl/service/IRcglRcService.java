@@ -64,5 +64,12 @@ public interface IRcglRcService {
      *
      * @return
      */
-    List<RcglRc> selectRcDistribute();
+    public List<RcglRc> selectRcDistribute();
+
+    /**
+     * 人才领域分布
+     *
+     * @return
+     */
+    public List<RcglRc> selectRcDirection();
 }

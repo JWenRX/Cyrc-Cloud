@@ -90,9 +90,18 @@
     </select>
 
     <select id="selectCyDevelop" resultMap="CyDevelopResult">
-        SELECT count(1) as qy_num,c.cy_name
-        FROM qygl q left join cygl_cy c on c.cy_id=q.qy_industry
-        WHERE q.is_deleted=0 GROUP BY q.qy_industry
+        SELECT count(1) as qy_num, c.cy_name
+        FROM qygl q
+                 left join cygl_cy c on c.cy_id = q.qy_industry
+        WHERE q.is_deleted = 0
+        GROUP BY q.qy_industry
+    </select>
+
+    <select id="selectCyDirection" parameterType="java.lang.Long" resultType="java.lang.String">
+        select c.cy_direction
+        from qygl q
+                 left join cygl_cy c on c.cy_id = q.qy_industry
+        where q.qy_id = #{qy}
     </select>
 
     <insert id="insertQygl" parameterType="Qygl">

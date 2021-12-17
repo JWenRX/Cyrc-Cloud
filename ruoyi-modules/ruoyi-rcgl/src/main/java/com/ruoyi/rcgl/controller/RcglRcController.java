@@ -7,14 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ruoyi.rcgl.model.Qygl;
 import com.ruoyi.rcgl.service.RemoteQyglService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.ruoyi.common.log.annotation.Log;
 import com.ruoyi.common.log.enums.BusinessType;
 import com.ruoyi.common.security.annotation.RequiresPermissions;
@@ -113,13 +106,33 @@ public class RcglRcController extends BaseController {
     }
 
     /**
+     * 查询人才所属产业领域
+     */
+    @GetMapping("/cyDirection")
+    public String selectCyDirection(Long qy) {
+        String cyDirection = remoteQyglService.selectCyDirection(qy);
+        return cyDirection;
+    }
+
+    /**
      * 获取高级人才分布
      *
      * @return
      */
     @RequestMapping("/rcDistribute")
-    public List<RcglRc> selectRyDistribute() {
-        List<RcglRc> ryList = rcglRcService.selectRcDistribute();
-        return ryList;
+    public List<RcglRc> selectRcDistribute() {
+        List<RcglRc> rcList = rcglRcService.selectRcDistribute();
+        return rcList;
+    }
+
+    /**
+     * 获取人才领域分布
+     *
+     * @return
+     */
+    @RequestMapping("/rcDirection")
+    public List<RcglRc> selectRcDirection() {
+        List<RcglRc> rcList = rcglRcService.selectRcDirection();
+        return rcList;
     }
 }

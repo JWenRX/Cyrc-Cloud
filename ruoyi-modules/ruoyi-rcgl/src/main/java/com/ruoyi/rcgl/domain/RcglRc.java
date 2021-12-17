@@ -122,4 +122,9 @@ public class RcglRc {
      */
     private Integer rcNum;
 
+    /**
+     * 产业方向
+     */
+    private String cyDirection;
+
 }

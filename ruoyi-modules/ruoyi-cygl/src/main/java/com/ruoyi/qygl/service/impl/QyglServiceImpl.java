@@ -112,4 +112,16 @@ public class QyglServiceImpl implements IQyglService {
     public List<Qygl> selectCyDevelop() {
         return qyglMapper.selectCyDevelop();
     }
+
+    /**
+     * 产业方向
+     *
+     * @param qy
+     * @return
+     */
+    @Override
+    public String selectCyDirection(Long qy) {
+        String cyDirection = qyglMapper.selectCyDirection(qy);
+        return cyDirection;
+    }
 }

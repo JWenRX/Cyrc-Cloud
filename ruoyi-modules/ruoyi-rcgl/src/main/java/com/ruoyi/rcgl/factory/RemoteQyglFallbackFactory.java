@@ -32,6 +32,11 @@ public class RemoteQyglFallbackFactory implements FallbackFactory<RemoteQyglServ
                 List<Qygl> list = new ArrayList<>();
                 return list;
             }
+
+            @Override
+            public String selectCyDirection(Long qy) {
+                return null;
+            }
         };
     }
 }

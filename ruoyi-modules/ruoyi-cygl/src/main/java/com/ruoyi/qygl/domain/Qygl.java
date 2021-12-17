@@ -86,5 +86,4 @@ public class Qygl {
      */
     private Integer qyNum;
 
-
 }

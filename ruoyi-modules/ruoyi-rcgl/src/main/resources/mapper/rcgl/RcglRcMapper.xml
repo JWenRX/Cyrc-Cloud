@@ -58,6 +58,11 @@
         <association property="rcNum" column="rc_num" javaType="java.lang.Integer" resultMap="RcNum"/>
     </resultMap>
 
+    <resultMap type="RcglRc" id="RcDirectionResult">
+        <result property="cyDirection" column="cy_direction"/>
+        <association property="rcNum" column="rc_num" javaType="java.lang.Integer" resultMap="RcNum"/>
+    </resultMap>
+
     <resultMap id="RcNum" type="java.lang.Integer">
         <result property="rcNum" column="rc_num"/>
     </resultMap>
@@ -115,6 +120,13 @@
         GROUP BY rc_level
     </select>
 
+    <select id="selectRcDirection" resultMap="RcDirectionResult">
+        select count(1) as rc_num, cy_direction
+        from rcgl_rc
+        where is_deleted = 0
+        group by cy_direction
+    </select>
+
     <insert id="insertRcglRc" parameterType="RcglRc">
         insert into rcgl_rc
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -132,6 +144,7 @@
             <if test="updateTime != null">update_time,</if>
             <if test="rcAreas != null">rc_areas,</if>
             <if test="rcLevel != null">rc_level,</if>
+            <if test="cyDirection != null">cy_direction,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="rcId != null">#{rcId},</if>
@@ -148,6 +161,7 @@
             <if test="updateTime != null">#{updateTime},</if>
             <if test="rcAreas != null">#{rcAreas},</if>
             <if test="rcLevel != null">#{rcLevel},</if>
+            <if test="cyDirection != null">#{cyDirection},</if>
         </trim>
     </insert>
 
@@ -167,6 +181,7 @@
             <if test="updateTime != null">update_time = #{updateTime},</if>
             <if test="rcAreas != null">rc_areas = #{rcAreas},</if>
             <if test="rcLevel != null">rc_level = #{rcLevel},</if>
+            <if test="cyDirection != null">cy_direction = #{cyDirection},</if>
         </trim>
         where rc_id = #{rcId}
     </update>

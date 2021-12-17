@@ -102,4 +102,13 @@ public class RcglRcServiceImpl implements IRcglRcService {
     public List<RcglRc> selectRcDistribute() {
         return rcglRcMapper.selectRcDistribute();
     }
+
+    /**
+     * 人才领域分布
+     * @return
+     */
+    @Override
+    public List<RcglRc> selectRcDirection() {
+        return rcglRcMapper.selectRcDirection();
+    }
 }

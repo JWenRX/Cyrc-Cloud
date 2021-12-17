@@ -52,7 +52,7 @@ public class CyglCyServiceImpl implements ICyglCyService {
      */
     @Override
     public int insertCyglCy(CyglCy cyglCy) {
-        cyglCy.setCreateBy(SecurityUtils.getUserId());
+        cyglCy.setCreateBy(SecurityUtils.getUsername());
         cyglCy.setCyId(UUIDUtils.getUUIDInOrderId().longValue());
         cyglCy.setCreateTime(DateUtils.getNowDate());
         return cyglCyMapper.insertCyglCy(cyglCy);
@@ -67,7 +67,7 @@ public class CyglCyServiceImpl implements ICyglCyService {
     @Override
     public int updateCyglCy(CyglCy cyglCy) {
         cyglCy.setUpdateTime(DateUtils.getNowDate());
-        cyglCy.setUpdateBy(SecurityUtils.getUserId());
+        cyglCy.setUpdateBy(SecurityUtils.getUsername());
         return cyglCyMapper.updateCyglCy(cyglCy);
     }
 

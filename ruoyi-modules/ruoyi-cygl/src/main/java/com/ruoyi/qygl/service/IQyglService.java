@@ -73,4 +73,12 @@ public interface IQyglService {
      * @return
      */
     List<Qygl> selectCyDevelop();
+
+    /**
+     * 产业方向
+     *
+     * @param qy
+     * @return
+     */
+    public String selectCyDirection(Long qy);
 }

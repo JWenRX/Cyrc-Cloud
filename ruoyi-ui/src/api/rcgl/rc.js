@@ -51,10 +51,27 @@ export function qyList() {
   })
 }
 
+// 查询人才所属产业领域
+export function selectCyDirection(query) {
+  return request({
+    url: '/rcgl/rc/cyDirection',
+    method: 'get',
+    params: query
+  })
+}
+
 // 查询高级人才分布
 export function selectRcDistribute() {
   return request({
     url: '/rcgl/rc/rcDistribute',
+    method: 'get'
+  })
+}
+
+// 查询人才领域分布
+export function selectRcDirection() {
+  return request({
+    url: '/rcgl/rc/rcDirection',
     method: 'get'
   })
 }

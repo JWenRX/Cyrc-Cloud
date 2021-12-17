@@ -43,7 +43,7 @@ public class CyglCy {
     /**
      * 创建者
      */
-    private Long createBy;
+    private String createBy;
 
     /**
      * 创建时间
@@ -54,7 +54,7 @@ public class CyglCy {
     /**
      * 更新者
      */
-    private Long updateBy;
+    private String updateBy;
 
     /**
      * 更新时间

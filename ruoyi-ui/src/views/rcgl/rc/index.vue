@@ -241,7 +241,7 @@
 </template>
 
 <script>
-import {listRc, getRc, delRc, addRc, updateRc, qyList} from "@/api/rcgl/rc";
+import {listRc, getRc, delRc, addRc, updateRc, qyList, selectCyDirection} from "@/api/rcgl/rc";
 import {provinceAndCityDataPlus, CodeToText, TextToCode} from 'element-china-area-data' // 4.省市区带‘全部’三级联动选择
 
 export default {
@@ -278,7 +278,8 @@ export default {
         rcProjectNum: null,
         rcActivation: null,
         rcAreas: null,
-        rcLevel: null
+        rcLevel: null,
+        cyDirection: null
       },
       // 表单参数
       form: {},
@@ -358,7 +359,8 @@ export default {
         updateTime: null,
         rcAreas: null,
         rcLevel: null,
-        selectedOptions: []
+        selectedOptions: [],
+        cyDirection: null
       };
       this.resetForm("form");
     },
@@ -384,7 +386,7 @@ export default {
       var loc = ''
       for (let i = 0; i < this.selectedOptions.length; i++) {
         var addr = CodeToText[this.selectedOptions[i]]
-        if (addr == "北京市" || addr == "天津市" || addr=="上海市") {
+        if (addr == "北京市" || addr == "天津市" || addr == "上海市") {
           loc = addr;
           break;
         }
@@ -395,6 +397,12 @@ export default {
       }
       // 输出区域码所对应的属性值即中文地址
       this.areas2 = loc
+    },
+    /** 获取产业方向 **/
+    async getCyDirection(qy) {
+      await selectCyDirection({qy: qy}).then(response => {
+        this.form.cyDirection = response;
+      })
     },
     /** 搜索按钮操作 */
     handleQuery() {
@@ -427,7 +435,7 @@ export default {
       getRc(rcId).then(response => {
         this.form = response.data;
         if (this.form.rcAreas != "") {
-          if (this.form.rcAreas == "北京市" || this.form.rcAreas == "天津市" ||this.form.rcAreas=="上海市") {
+          if (this.form.rcAreas == "北京市" || this.form.rcAreas == "天津市" || this.form.rcAreas == "上海市") {
             this.form.selectedOptions = [TextToCode[this.form.rcAreas].code, TextToCode[this.form.rcAreas]['市辖区'].code];
           } else {
             var arr = this.form.rcAreas.split("/");
@@ -440,7 +448,8 @@ export default {
       });
     },
     /** 提交按钮 */
-    submitForm() {
+    async submitForm() {
+      await this.getCyDirection(this.form.rcCompany)
       this.$refs["form"].validate(valid => {
         if (valid) {
           if (this.form.rcId != null) {

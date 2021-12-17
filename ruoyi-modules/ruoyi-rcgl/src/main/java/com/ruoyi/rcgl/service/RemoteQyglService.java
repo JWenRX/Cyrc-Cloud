@@ -4,8 +4,7 @@ import com.ruoyi.common.core.constant.ServiceNameConstants;
 import com.ruoyi.rcgl.factory.RemoteQyglFallbackFactory;
 import com.ruoyi.rcgl.model.Qygl;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,4 +20,13 @@ public interface RemoteQyglService {
      */
     @GetMapping(value = "/qygl/qyList")
     public List<Qygl> qyList();
+
+    /**
+     * 查询人才所属产业领域
+     *
+     * @param qy
+     * @return
+     */
+    @GetMapping(value = "/qygl/cyDirection")
+    public String selectCyDirection(@RequestParam("qy") Long qy);
 }

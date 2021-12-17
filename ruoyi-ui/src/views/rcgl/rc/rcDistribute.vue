@@ -2,7 +2,7 @@
   <div class="app-container">
     <el-row>
       <el-col :span="12">
-        <div id="radar" class="grid-content" :style="{width: '600px', height: '600px'}"></div>
+        <div id="radar" class="grid-content" :style="{width: '700px', height: '600px'}"></div>
       </el-col>
       <el-col :span="12">
         <div id="bar" class="grid-content" :style="{width: '620px', height: '560px'}"></div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {selectRcDistribute} from "@/api/rcgl/rc";
+import {selectRcDistribute, selectRcDirection} from "@/api/rcgl/rc";
 import * as echarts from 'echarts';
 
 export default {
@@ -22,37 +22,63 @@ export default {
       //雷达图
       radarOption: {
         title: {
-          text: 'Basic Radar Chart'
+          text: '人才雷达图',
+          top: "5%",
+          left: "left"
         },
         legend: {
-          data: ['Allocated Budget', 'Actual Spending']
+          data: ['人才数量'],
+          top: "10%",
+          left: "left",
+        },
+        tooltip: {
+          trigger: 'axis',
         },
         radar: {
           // shape: 'circle',
-          indicator: [
-            {name: 'Sales', max: 6500},
-            {name: 'Administration', max: 16000},
-            {name: 'Information Technology', max: 30000},
-            {name: 'Customer Support', max: 38000},
-            {name: 'Development', max: 52000},
-            {name: 'Marketing', max: 25000}
-          ]
+          indicator: [],
+          name: { // (圆外的标签)雷达图每个指示器名称的配置项。
+            formatter: '{value}',
+            textStyle: {
+              fontSize: 13,
+              color: '#000'
+            }
+          },
         },
         series: [
           {
             name: 'Budget vs spending',
             type: 'radar',
-            data: [
-              {
-                value: [4200, 3000, 20000, 35000, 50000, 18000],
-                name: 'Allocated Budget'
-              },
-              {
-                value: [5000, 14000, 28000, 26000, 42000, 21000],
-                name: 'Actual Spending'
+            tooltip: {
+              trigger: 'item'
+            },
+            areaStyle: {},
+            label: {
+              normal: {
+                show: true,
+                position: 'top',
+                distance: 5,
+                color: '#D7504B',
+                fontSize: 14,
+                formatter: function(params) {
+                  return params.value;
+                }
               }
-            ]
-          }
+            },
+            data: [{
+              value: [],
+              name: '人才数量',
+              // 设置区域边框和区域的颜色
+              itemStyle: {
+                normal: {
+                  color: '#60C0DD',
+                  lineStyle: {
+                    color: '#60C0DD',
+                  },
+                },
+              },
+            }]
+          },
         ]
       },
       //柱状图
@@ -107,7 +133,8 @@ export default {
           }
         ]
       },
-      rcList: []
+      rcList: [],
+      cyList: []
     }
   },
   created() {
@@ -131,18 +158,22 @@ export default {
       });
 
       //查询企业发展情况
-      // await selectCyDevelop().then(response => {
-      //   this.qyList = response;
-      // });
+      await selectRcDirection().then(response => {
+        this.cyList = response;
+      });
 
-      // for (let i = 0; i < this.cyList.length; i++) {
-      //   this.fanOption.series[0].data.push({'value': this.cyList[i].cyNum, 'name': this.cyList[i].cyDirection})
-      // }
+      let maxData = 0;
+      for (let i = 0; i < this.cyList.length; i++) {
+        maxData = this.cyList[i].rcNum + maxData;
+      }
+      for (let i = 0; i < this.cyList.length; i++) {
+        this.radarOption.radar.indicator.push({'max': (maxData / 1.5), 'name': this.cyList[i].cyDirection})
+        this.radarOption.series[0].data[0].value.push(this.cyList[i].rcNum)
+      }
       for (let i = 0; i < this.rcList.length; i++) {
         this.barOption.xAxis.data.push(this.rcList[i].rcLevel)
         this.barOption.series[0].data.push(this.rcList[i].rcNum)
       }
-      console.log(this.barOption.xAxis.data)
     }
   }
 };
