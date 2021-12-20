@@ -11,7 +11,7 @@
  Target Server Version : 80027
  File Encoding         : 65001
 
- Date: 17/12/2021 17:29:06
+ Date: 20/12/2021 14:04:53
 */
 
 SET NAMES utf8mb4;
@@ -371,16 +371,17 @@ CREATE TABLE `rcgl_rc`  (
 -- ----------------------------
 -- Records of rcgl_rc
 -- ----------------------------
-INSERT INTO `rcgl_rc` VALUES (414292156, 391866149, '赵武', '车联网', '国家级', 12, 4, 67, 80.90, '黑龙江省/哈尔滨市', '新一代信息技术产业方向', 'admin', '2021-12-15 23:31:39', 'admin', '2021-12-17 14:57:46', 0);
-INSERT INTO `rcgl_rc` VALUES (571400081, 769838009, '刘美', '18', '省级', 13, 12, 10, 89.00, '北京市', '生物产业方向', 'admin', '2021-12-17 16:35:56', 'admin', '2021-12-17 16:36:51', 0);
-INSERT INTO `rcgl_rc` VALUES (697249190, 422169164, '安婷', '机械自动化', '国家级', 10, 8, 10, 87.10, '北京市', '高端装备制造产业方向', 'admin', '2021-12-16 23:30:52', 'admin', '2021-12-17 14:56:57', 0);
-INSERT INTO `rcgl_rc` VALUES (900759249, 1838554377, '廖七', '大数据分析', '国家级', 10, 21, 8, 91.20, '辽宁省/鞍山市', '生物产业方向', 'admin', '2021-12-17 15:33:37', NULL, NULL, 0);
-INSERT INTO `rcgl_rc` VALUES (906451348, 1783052344, '吴六', '新能源', '省级', 10, 20, 56, 91.03, '广东省/韶关市', '新材料产业方向', 'admin', '2021-12-16 16:10:04', 'admin', '2021-12-17 16:26:22', 0);
-INSERT INTO `rcgl_rc` VALUES (981409868, 1222422917, '吴开', '基因工程', '院士', 10, 20, 8, 78.90, '山东省/济南市', '生物产业方向', 'admin', '2021-12-17 15:31:59', NULL, NULL, 0);
-INSERT INTO `rcgl_rc` VALUES (1018529144, 395991575, '张三', 'AI算法', '国家级', 10, 4, 3, 89.02, '广东省/广州市', '节能环保方向', 'admin', '2021-12-12 22:04:19', 'admin', '2021-12-17 14:57:25', 0);
-INSERT INTO `rcgl_rc` VALUES (1317827681, 195258530, '李四', '数据挖掘', '市级', 10, 5, 8, 90.10, '北京市', '新一代信息技术产业方向', 'admin', '2021-12-12 22:27:52', 'admin', '2021-12-17 14:57:21', 0);
-INSERT INTO `rcgl_rc` VALUES (1462441642, 2102076844, '刘星', '网络安全', '院士', 7, 10, 5, 88.00, '吉林省/长春市', '节能环保方向', 'admin', '2021-12-12 22:43:27', 'admin', '2021-12-17 14:58:00', 0);
-INSERT INTO `rcgl_rc` VALUES (1652133453, 391866149, '张涛', '电力资源', '国家级', 11, 10, 10, 88.00, '河北省/秦皇岛市', '新一代信息技术产业方向', 'admin', '2021-12-17 14:53:30', 'admin', '2021-12-17 14:57:28', 0);
+INSERT INTO `rcgl_rc` VALUES (414292156, 391866149, '赵武', '车联网', '国家级', 12, 24, 16, 87.60, '黑龙江省/哈尔滨市', '新一代信息技术产业方向', 'admin', '2021-12-15 23:31:39', 'superAdmin', '2021-12-20 14:02:12', 0);
+INSERT INTO `rcgl_rc` VALUES (571400081, 769838009, '刘美', '18', '省级', 13, 22, 10, 74.90, '北京市', '生物产业方向', 'admin', '2021-12-17 16:35:56', 'superAdmin', '2021-12-20 14:00:05', 0);
+INSERT INTO `rcgl_rc` VALUES (697249190, 422169164, '安婷', '机械自动化', '国家级', 10, 26, 10, 77.20, '北京市', '高端装备制造产业方向', 'admin', '2021-12-16 23:30:52', 'superAdmin', '2021-12-19 23:56:20', 0);
+INSERT INTO `rcgl_rc` VALUES (900759249, 1838554377, '廖七', '大数据分析', '国家级', 10, 21, 8, 65.10, '辽宁省/鞍山市', '生物产业方向', 'admin', '2021-12-17 15:33:37', 'superAdmin', '2021-12-19 23:56:09', 0);
+INSERT INTO `rcgl_rc` VALUES (906451348, 1783052344, '吴六', '新能源', '省级', 10, 20, 26, 95.80, '广东省/韶关市', '新材料产业方向', 'admin', '2021-12-16 16:10:04', 'superAdmin', '2021-12-20 14:02:24', 0);
+INSERT INTO `rcgl_rc` VALUES (981409868, 1222422917, '吴开', '基因工程', '院士', 10, 20, 8, 63.40, '山东省/济南市', '生物产业方向', 'admin', '2021-12-17 15:31:59', 'superAdmin', '2021-12-19 23:56:05', 0);
+INSERT INTO `rcgl_rc` VALUES (1018529144, 395991575, '张三', 'AI算法', '国家级', 10, 40, 13, 100.00, '广东省/广州市', '新材料产业方向', 'admin', '2021-12-12 22:04:19', 'superAdmin', '2021-12-20 14:02:31', 0);
+INSERT INTO `rcgl_rc` VALUES (1317827681, 195258530, '李四', '数据挖掘', '市级', 10, 15, 8, 60.00, '北京市', '新一代信息技术产业方向', 'admin', '2021-12-12 22:27:52', 'superAdmin', '2021-12-20 14:02:36', 0);
+INSERT INTO `rcgl_rc` VALUES (1462441642, 2102076844, '刘星', '网络安全', '院士', 7, 10, 5, 60.00, '吉林省/长春市', '节能环保方向', 'admin', '2021-12-12 22:43:27', 'superAdmin', '2021-12-19 23:55:35', 0);
+INSERT INTO `rcgl_rc` VALUES (1652133453, 391866149, '张涛', '电力资源', '国家级', 11, 15, 10, 60.00, '河北省/秦皇岛市', '新一代信息技术产业方向', 'admin', '2021-12-17 14:53:30', 'superAdmin', '2021-12-20 14:01:46', 0);
+INSERT INTO `rcgl_rc` VALUES (1813461686, 1224324815, '甄子丹', '可再生能源', '市级', 30, 15, 10, 88.50, '广东省/佛山市', '新材料产业方向', 'superAdmin', '2021-12-19 23:52:52', 'superAdmin', '2021-12-19 23:55:52', 0);
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -433,16 +434,16 @@ CREATE TABLE `sys_dept`  (
 -- ----------------------------
 -- Records of sys_dept
 -- ----------------------------
-INSERT INTO `sys_dept` VALUES (100, 0, '0', '政府产业人才股份公司', 0, '张三', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-12 16:35:05');
-INSERT INTO `sys_dept` VALUES (101, 100, '0,100', '深圳总公司', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (102, 100, '0,100', '长沙分公司', 2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (103, 101, '0,100,101', '研发部门', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (104, 101, '0,100,101', '市场部门', 2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (105, 101, '0,100,101', '测试部门', 3, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (106, 101, '0,100,101', '财务部门', 4, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (107, 101, '0,100,101', '运维部门', 5, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (108, 102, '0,100,102', '市场部门', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
-INSERT INTO `sys_dept` VALUES (109, 102, '0,100,102', '财务部门', 2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL);
+INSERT INTO `sys_dept` VALUES (100, 0, '0', '政府产业人才股份公司', 0, '李四', '15888888888', '123456@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 15:58:54');
+INSERT INTO `sys_dept` VALUES (101, 100, '0,100', '深圳总公司', 1, '张三', '15888888888', 'zs@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 15:59:10');
+INSERT INTO `sys_dept` VALUES (102, 100, '0,100', '长沙分公司', 2, '王安石', '15888888888', 'was@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:01:12');
+INSERT INTO `sys_dept` VALUES (103, 101, '0,100,101', '研发部门', 1, '赵武', '15888888888', 'zw@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 15:59:25');
+INSERT INTO `sys_dept` VALUES (104, 101, '0,100,101', '市场部门', 2, '赵武', '15888888888', 'zw@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 15:59:43');
+INSERT INTO `sys_dept` VALUES (105, 101, '0,100,101', '测试部门', 3, '赵武', '15888888888', 'zw@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:00:07');
+INSERT INTO `sys_dept` VALUES (106, 101, '0,100,101', '财务部门', 4, '赵武', '15888888888', 'zw@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:00:43');
+INSERT INTO `sys_dept` VALUES (107, 101, '0,100,101', '运维部门', 5, '赵武', '15888888888', 'zw@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:00:30');
+INSERT INTO `sys_dept` VALUES (108, 102, '0,100,102', '市场部门', 1, '王安石', '15888888888', 'was@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:01:26');
+INSERT INTO `sys_dept` VALUES (109, 102, '0,100,102', '财务部门', 2, '王安石', '15888888888', 'was@qq.com', '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:01:39');
 
 -- ----------------------------
 -- Table structure for sys_dict_data
@@ -586,7 +587,7 @@ CREATE TABLE `sys_logininfor`  (
   `msg` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '提示信息',
   `access_time` datetime(0) NULL DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 152 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 177 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '系统访问记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -643,6 +644,34 @@ INSERT INTO `sys_logininfor` VALUES (148, 'admin', '127.0.0.1', '0', '登录成�
 INSERT INTO `sys_logininfor` VALUES (149, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-17 13:33:07');
 INSERT INTO `sys_logininfor` VALUES (150, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-17 13:54:35');
 INSERT INTO `sys_logininfor` VALUES (151, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-17 14:45:48');
+INSERT INTO `sys_logininfor` VALUES (152, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-18 22:57:52');
+INSERT INTO `sys_logininfor` VALUES (153, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-18 22:57:52');
+INSERT INTO `sys_logininfor` VALUES (154, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-18 22:58:01');
+INSERT INTO `sys_logininfor` VALUES (155, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-18 23:06:59');
+INSERT INTO `sys_logininfor` VALUES (156, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-18 23:10:23');
+INSERT INTO `sys_logininfor` VALUES (157, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-18 23:16:17');
+INSERT INTO `sys_logininfor` VALUES (158, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-18 23:17:35');
+INSERT INTO `sys_logininfor` VALUES (159, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-18 23:21:46');
+INSERT INTO `sys_logininfor` VALUES (160, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-18 23:23:23');
+INSERT INTO `sys_logininfor` VALUES (161, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-18 23:53:37');
+INSERT INTO `sys_logininfor` VALUES (162, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-18 23:53:51');
+INSERT INTO `sys_logininfor` VALUES (163, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-19 00:10:16');
+INSERT INTO `sys_logininfor` VALUES (164, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-19 15:25:09');
+INSERT INTO `sys_logininfor` VALUES (165, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-19 15:25:09');
+INSERT INTO `sys_logininfor` VALUES (166, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-19 15:25:23');
+INSERT INTO `sys_logininfor` VALUES (167, 'admin', '127.0.0.1', '0', '退出成功', '2021-12-19 15:56:53');
+INSERT INTO `sys_logininfor` VALUES (168, 'ry', '127.0.0.1', '1', '用户密码错误', '2021-12-19 15:57:13');
+INSERT INTO `sys_logininfor` VALUES (169, 'admin', '127.0.0.1', '0', '登录成功', '2021-12-19 15:57:54');
+INSERT INTO `sys_logininfor` VALUES (170, 'ry', '127.0.0.1', '1', '用户密码错误', '2021-12-19 16:05:33');
+INSERT INTO `sys_logininfor` VALUES (171, 'ly', '127.0.0.1', '1', '用户密码错误', '2021-12-19 16:11:07');
+INSERT INTO `sys_logininfor` VALUES (172, 'ly', '127.0.0.1', '1', '用户密码错误', '2021-12-19 16:11:43');
+INSERT INTO `sys_logininfor` VALUES (173, 'ly', '127.0.0.1', '0', '登录成功', '2021-12-19 16:13:16');
+INSERT INTO `sys_logininfor` VALUES (174, 'ly', '127.0.0.1', '0', '退出成功', '2021-12-19 16:56:47');
+INSERT INTO `sys_logininfor` VALUES (175, 'superAdmin', '127.0.0.1', '0', '登录成功', '2021-12-19 16:58:51');
+INSERT INTO `sys_logininfor` VALUES (176, 'superAdmin', '127.0.0.1', '0', '退出成功', '2021-12-19 17:02:23');
+INSERT INTO `sys_logininfor` VALUES (177, 'superAdmin', '127.0.0.1', '0', '登录成功', '2021-12-19 17:02:42');
+INSERT INTO `sys_logininfor` VALUES (178, 'superAdmin', '127.0.0.1', '0', '退出成功', '2021-12-20 13:53:19');
+INSERT INTO `sys_logininfor` VALUES (179, 'superAdmin', '127.0.0.1', '0', '登录成功', '2021-12-20 13:53:36');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -669,7 +698,7 @@ CREATE TABLE `sys_menu`  (
   `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2028 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2027 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单权限表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -801,8 +830,8 @@ CREATE TABLE `sys_notice`  (
 -- ----------------------------
 -- Records of sys_notice
 -- ----------------------------
-INSERT INTO `sys_notice` VALUES (1, '温馨提醒：2018-07-01 若依新版本发布啦', '2', 0xE696B0E78988E69CACE58685E5AEB9, '0', 'admin', '2021-12-02 20:07:27', '', NULL, '管理员');
-INSERT INTO `sys_notice` VALUES (2, '维护通知：2018-07-01 若依系统凌晨维护', '1', 0xE7BBB4E68AA4E58685E5AEB9, '0', 'admin', '2021-12-02 20:07:27', '', NULL, '管理员');
+INSERT INTO `sys_notice` VALUES (1, '温馨提醒：2018-07-01 产业人才新版本发布啦', '2', 0xE696B0E78988E69CACE58685E5AEB9, '0', 'admin', '2021-12-02 20:07:27', 'admin', '2021-12-19 16:04:26', '管理员');
+INSERT INTO `sys_notice` VALUES (2, '维护通知：2018-07-01 产业人才系统凌晨维护', '1', 0x3C703EE7BBB4E68AA4E58685E5AEB93C2F703E, '0', 'admin', '2021-12-02 20:07:27', 'admin', '2021-12-19 16:04:41', '管理员');
 
 -- ----------------------------
 -- Table structure for sys_oper_log
@@ -826,7 +855,7 @@ CREATE TABLE `sys_oper_log`  (
   `error_msg` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime(0) NULL DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 327 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 374 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '操作日志记录' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1058,6 +1087,63 @@ INSERT INTO `sys_oper_log` VALUES (323, '企业管理', 3, 'com.ruoyi.qygl.contr
 INSERT INTO `sys_oper_log` VALUES (324, '产业管理', 1, 'com.ruoyi.cygl.controller.CyglCyController.add()', 'POST', 1, 'admin', NULL, '/cy', '127.0.0.1', '', '{\"cyDirection\":\"高端装备制造产业方向\",\"createBy\":\"admin\",\"createTime\":1639730706909,\"cyName\":\"1\",\"cyId\":985179347}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-17 16:45:06');
 INSERT INTO `sys_oper_log` VALUES (325, '产业管理', 2, 'com.ruoyi.cygl.controller.CyglCyController.edit()', 'PUT', 1, 'admin', NULL, '/cy', '127.0.0.1', '', '{\"cyDirection\":\"高端装备制造产业方向\",\"createBy\":\"admin\",\"isDeleted\":0,\"createTime\":1639730707000,\"updateBy\":\"admin\",\"updateTime\":1639730733628,\"cyName\":\"1\",\"cyId\":985179347}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-17 16:45:33');
 INSERT INTO `sys_oper_log` VALUES (326, '产业管理', 3, 'com.ruoyi.cygl.controller.CyglCyController.remove()', 'DELETE', 1, 'admin', NULL, '/cy/985179347', '127.0.0.1', '', NULL, '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-17 16:45:44');
+INSERT INTO `sys_oper_log` VALUES (327, '个人信息', 2, 'com.ruoyi.system.controller.SysProfileController.updateProfile()', 'PUT', 1, 'admin', NULL, '/user/profile', '127.0.0.1', '', '{\"roles\":[{\"flag\":false,\"roleId\":1,\"admin\":true,\"dataScope\":\"1\",\"params\":{},\"roleSort\":\"1\",\"deptCheckStrictly\":false,\"menuCheckStrictly\":false,\"roleKey\":\"admin\",\"roleName\":\"超级管理员\",\"status\":\"0\"}],\"phonenumber\":\"15888888888\",\"admin\":true,\"loginDate\":1638446846000,\"remark\":\"管理员\",\"delFlag\":\"0\",\"loginIp\":\"127.0.0.1\",\"email\":\"ry@163.com\",\"nickName\":\"李四\",\"sex\":\"0\",\"deptId\":103,\"avatar\":\"\",\"dept\":{\"deptName\":\"研发部门\",\"leader\":\"若依\",\"deptId\":103,\"orderNum\":\"1\",\"params\":{},\"parentId\":101,\"children\":[],\"status\":\"0\"},\"params\":{},\"userName\":\"admin\",\"userId\":1,\"createBy\":\"admin\",\"createTime\":1638446846000,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:49:51');
+INSERT INTO `sys_oper_log` VALUES (328, '个人信息', 2, 'com.ruoyi.system.controller.SysProfileController.updateProfile()', 'PUT', 1, 'admin', NULL, '/user/profile', '127.0.0.1', '', '{\"roles\":[{\"flag\":false,\"roleId\":1,\"admin\":true,\"dataScope\":\"1\",\"params\":{},\"roleSort\":\"1\",\"deptCheckStrictly\":false,\"menuCheckStrictly\":false,\"roleKey\":\"admin\",\"roleName\":\"超级管理员\",\"status\":\"0\"}],\"phonenumber\":\"15888888888\",\"admin\":true,\"loginDate\":1638446846000,\"remark\":\"管理员\",\"delFlag\":\"0\",\"loginIp\":\"127.0.0.1\",\"email\":\"12345@qq.com\",\"nickName\":\"李四\",\"sex\":\"0\",\"deptId\":103,\"avatar\":\"\",\"dept\":{\"deptName\":\"研发部门\",\"leader\":\"若依\",\"deptId\":103,\"orderNum\":\"1\",\"params\":{},\"parentId\":101,\"children\":[],\"status\":\"0\"},\"params\":{},\"userName\":\"admin\",\"userId\":1,\"createBy\":\"admin\",\"createTime\":1638446846000,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:50:05');
+INSERT INTO `sys_oper_log` VALUES (329, '角色管理', 2, 'com.ruoyi.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/role', '127.0.0.1', '', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1638446846000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"common\",\"roleName\":\"普通用户\",\"menuIds\":[2006,2000,2019,2013,2020,2001,2005,2014,2018,2021,2025],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:53:47');
+INSERT INTO `sys_oper_log` VALUES (330, '用户管理', 2, 'com.ruoyi.system.controller.SysUserController.edit()', 'PUT', 1, 'admin', NULL, '/user', '127.0.0.1', '', '{\"roles\":[{\"flag\":false,\"roleId\":2,\"admin\":false,\"dataScope\":\"2\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":false,\"menuCheckStrictly\":false,\"roleKey\":\"common\",\"roleName\":\"普通用户\",\"status\":\"0\"}],\"phonenumber\":\"15666666666\",\"admin\":false,\"loginDate\":1638446846000,\"remark\":\"普通用户\",\"delFlag\":\"0\",\"password\":\"\",\"updateBy\":\"admin\",\"postIds\":[4],\"loginIp\":\"127.0.0.1\",\"email\":\"ry@qq.com\",\"nickName\":\"刘依\",\"sex\":\"1\",\"deptId\":105,\"avatar\":\"\",\"dept\":{\"deptName\":\"测试部门\",\"leader\":\"若依\",\"deptId\":105,\"orderNum\":\"3\",\"params\":{},\"parentId\":101,\"children\":[],\"status\":\"0\"},\"params\":{},\"userName\":\"ry\",\"userId\":2,\"createBy\":\"admin\",\"roleIds\":[2],\"createTime\":1638446846000,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:55:44');
+INSERT INTO `sys_oper_log` VALUES (331, '用户管理', 2, 'com.ruoyi.system.controller.SysUserController.edit()', 'PUT', 1, 'admin', NULL, '/user', '127.0.0.1', '', '{\"roles\":[{\"flag\":false,\"roleId\":2,\"admin\":false,\"dataScope\":\"2\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":false,\"menuCheckStrictly\":false,\"roleKey\":\"common\",\"roleName\":\"普通用户\",\"status\":\"0\"}],\"phonenumber\":\"15666666666\",\"admin\":false,\"loginDate\":1638446846000,\"remark\":\"普通用户\",\"delFlag\":\"0\",\"password\":\"\",\"updateBy\":\"admin\",\"postIds\":[4],\"loginIp\":\"127.0.0.1\",\"email\":\"ly@qq.com\",\"nickName\":\"刘依\",\"sex\":\"1\",\"deptId\":105,\"avatar\":\"\",\"dept\":{\"deptName\":\"测试部门\",\"leader\":\"若依\",\"deptId\":105,\"orderNum\":\"3\",\"params\":{},\"parentId\":101,\"children\":[],\"status\":\"0\"},\"params\":{},\"userName\":\"ry\",\"userId\":2,\"createBy\":\"admin\",\"roleIds\":[2],\"createTime\":1638446846000,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:56:11');
+INSERT INTO `sys_oper_log` VALUES (332, '用户管理', 4, 'com.ruoyi.system.controller.SysUserController.insertAuthRole()', 'PUT', 1, 'admin', NULL, '/user/authRole', '127.0.0.1', '', '2 [2]', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:56:30');
+INSERT INTO `sys_oper_log` VALUES (333, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"政府产业人才股份公司\",\"leader\":\"李四\",\"deptId\":100,\"orderNum\":\"0\",\"delFlag\":\"0\",\"params\":{},\"parentId\":0,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0\",\"email\":\"123456@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:58:54');
+INSERT INTO `sys_oper_log` VALUES (334, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"深圳总公司\",\"leader\":\"张三\",\"deptId\":101,\"orderNum\":\"1\",\"delFlag\":\"0\",\"params\":{},\"parentId\":100,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100\",\"email\":\"zs@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:59:10');
+INSERT INTO `sys_oper_log` VALUES (335, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"研发部门\",\"leader\":\"赵武\",\"deptId\":103,\"orderNum\":\"1\",\"delFlag\":\"0\",\"params\":{},\"parentId\":101,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100,101\",\"email\":\"zw@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:59:25');
+INSERT INTO `sys_oper_log` VALUES (336, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"市场部门\",\"leader\":\"赵武\",\"deptId\":104,\"orderNum\":\"2\",\"delFlag\":\"0\",\"params\":{},\"parentId\":101,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100,101\",\"email\":\"zw@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 15:59:43');
+INSERT INTO `sys_oper_log` VALUES (337, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"测试部门\",\"leader\":\"赵武\",\"deptId\":105,\"orderNum\":\"3\",\"delFlag\":\"0\",\"params\":{},\"parentId\":101,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100,101\",\"email\":\"zw@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:00:07');
+INSERT INTO `sys_oper_log` VALUES (338, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"运维部门\",\"leader\":\"赵武\",\"deptId\":107,\"orderNum\":\"5\",\"delFlag\":\"0\",\"params\":{},\"parentId\":101,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100,101\",\"email\":\"zw@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:00:30');
+INSERT INTO `sys_oper_log` VALUES (339, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"财务部门\",\"leader\":\"赵武\",\"deptId\":106,\"orderNum\":\"4\",\"delFlag\":\"0\",\"params\":{},\"parentId\":101,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100,101\",\"email\":\"zw@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:00:43');
+INSERT INTO `sys_oper_log` VALUES (340, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"长沙分公司\",\"leader\":\"王安石\",\"deptId\":102,\"orderNum\":\"2\",\"delFlag\":\"0\",\"params\":{},\"parentId\":100,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100\",\"email\":\"was@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:01:12');
+INSERT INTO `sys_oper_log` VALUES (341, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"市场部门\",\"leader\":\"王安石\",\"deptId\":108,\"orderNum\":\"1\",\"delFlag\":\"0\",\"params\":{},\"parentId\":102,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100,102\",\"email\":\"was@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:01:26');
+INSERT INTO `sys_oper_log` VALUES (342, '部门管理', 2, 'com.ruoyi.system.controller.SysDeptController.edit()', 'PUT', 1, 'admin', NULL, '/dept', '127.0.0.1', '', '{\"deptName\":\"财务部门\",\"leader\":\"王安石\",\"deptId\":109,\"orderNum\":\"2\",\"delFlag\":\"0\",\"params\":{},\"parentId\":102,\"createBy\":\"admin\",\"children\":[],\"createTime\":1638446846000,\"phone\":\"15888888888\",\"updateBy\":\"admin\",\"ancestors\":\"0,100,102\",\"email\":\"was@qq.com\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:01:39');
+INSERT INTO `sys_oper_log` VALUES (343, '用户管理', 2, 'com.ruoyi.system.controller.SysUserController.edit()', 'PUT', 1, 'admin', NULL, '/user', '127.0.0.1', '', '{\"roles\":[{\"flag\":false,\"roleId\":2,\"admin\":false,\"dataScope\":\"2\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":false,\"menuCheckStrictly\":false,\"roleKey\":\"common\",\"roleName\":\"普通用户\",\"status\":\"0\"}],\"phonenumber\":\"15666666666\",\"admin\":false,\"loginDate\":1638446846000,\"remark\":\"普通用户\",\"delFlag\":\"0\",\"password\":\"\",\"updateBy\":\"admin\",\"postIds\":[4],\"loginIp\":\"127.0.0.1\",\"email\":\"ly@qq.com\",\"nickName\":\"刘依\",\"sex\":\"1\",\"deptId\":105,\"avatar\":\"\",\"dept\":{\"deptName\":\"测试部门\",\"leader\":\"赵武\",\"deptId\":105,\"orderNum\":\"3\",\"params\":{},\"parentId\":101,\"children\":[],\"status\":\"0\"},\"params\":{},\"userName\":\"ry\",\"userId\":2,\"createBy\":\"admin\",\"roleIds\":[2],\"createTime\":1638446846000,\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:03:13');
+INSERT INTO `sys_oper_log` VALUES (344, '通知公告', 2, 'com.ruoyi.system.controller.SysNoticeController.edit()', 'PUT', 1, 'admin', NULL, '/notice', '127.0.0.1', '', '{\"noticeContent\":\"新版本内容\",\"createBy\":\"admin\",\"createTime\":1638446847000,\"updateBy\":\"admin\",\"noticeType\":\"2\",\"remark\":\"管理员\",\"params\":{},\"noticeId\":1,\"noticeTitle\":\"温馨提醒：2018-07-01 产业人才新版本发布啦\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:04:26');
+INSERT INTO `sys_oper_log` VALUES (345, '通知公告', 2, 'com.ruoyi.system.controller.SysNoticeController.edit()', 'PUT', 1, 'admin', NULL, '/notice', '127.0.0.1', '', '{\"noticeContent\":\"<p>维护内容</p>\",\"createBy\":\"admin\",\"createTime\":1638446847000,\"updateBy\":\"admin\",\"noticeType\":\"1\",\"remark\":\"管理员\",\"params\":{},\"noticeId\":2,\"noticeTitle\":\"维护通知：2018-07-01 产业人才系统凌晨维护\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:04:41');
+INSERT INTO `sys_oper_log` VALUES (346, '用户管理', 2, 'com.ruoyi.system.controller.SysUserController.resetPwd()', 'PUT', 1, 'admin', NULL, '/user/resetPwd', '127.0.0.1', '', '{\"admin\":false,\"password\":\"$2a$10$IoKUt6xRbq9aqk809gXy7Oaizo9tE3fV5cQUVGe8hFrUYlhH4/.s2\",\"updateBy\":\"admin\",\"params\":{},\"userId\":2}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:12:57');
+INSERT INTO `sys_oper_log` VALUES (347, '角色管理', 2, 'com.ruoyi.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/role', '127.0.0.1', '', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1638446846000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"common\",\"roleName\":\"普通用户\",\"menuIds\":[2006,2000,2019,2013,2020,2001,2005,2027,2014,2018,2021,2025,2026],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:14:47');
+INSERT INTO `sys_oper_log` VALUES (348, '角色管理', 1, 'com.ruoyi.system.controller.SysRoleController.add()', 'POST', 1, 'admin', NULL, '/role', '127.0.0.1', '', '{\"flag\":false,\"roleId\":100,\"admin\":false,\"remark\":\"系统管理员\",\"params\":{},\"roleSort\":\"3\",\"deptCheckStrictly\":true,\"createBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"superAdmin\",\"roleName\":\"系统管理员\",\"deptIds\":[],\"menuIds\":[1,2,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,102,1013,1014,1015,1016,103,1017,1018,1019,1020,104,1021,1022,1023,1024,1025,107,1036,1037,1038,1039,108,500,1040,1041,1042,501,1043,1044,1045,2006,2000,2001,2002,2003,2004,2005,2027,2019,2013,2014,2015,2016,2017,2018,2020,2021,2022,2023,2024,2025,2026,109,1046,1047,1048,111,112],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:54:20');
+INSERT INTO `sys_oper_log` VALUES (349, '用户管理', 1, 'com.ruoyi.system.controller.SysUserController.add()', 'POST', 1, 'admin', NULL, '/user', '127.0.0.1', '', '{\"phonenumber\":\"16696759916\",\"admin\":false,\"remark\":\"集团董事长\",\"password\":\"$2a$10$zG/.7cM9fmxxVPWX7BAGaedM4Amp7wdbwCSnv3bAp5SfzCQHge3Ue\",\"postIds\":[1],\"email\":\"sa@qq.com\",\"nickName\":\"superAdmin\",\"sex\":\"0\",\"deptId\":100,\"params\":{},\"userName\":\"王安石\",\"userId\":100,\"createBy\":\"admin\",\"roleIds\":[100],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 16:56:32');
+INSERT INTO `sys_oper_log` VALUES (350, '角色管理', 2, 'com.ruoyi.system.controller.SysRoleController.edit()', 'PUT', 1, 'admin', NULL, '/role', '127.0.0.1', '', '{\"flag\":false,\"roleId\":100,\"admin\":false,\"remark\":\"系统管理员\",\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"3\",\"deptCheckStrictly\":true,\"createTime\":1639904060000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"superAdmin\",\"roleName\":\"系统管理员\",\"menuIds\":[1,2,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,103,1017,1018,1019,1020,104,1021,1022,1023,1024,1025,107,1036,1037,1038,1039,108,500,1040,1041,1042,501,1043,1044,1045,2006,2000,2001,2002,2003,2004,2005,2027,2019,2013,2014,2015,2016,2017,2018,2020,2021,2022,2023,2024,2025,2026,109,1046,1047,1048,111,112],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 17:01:00');
+INSERT INTO `sys_oper_log` VALUES (351, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1838554377,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"辽宁省/鞍山市\",\"updateTime\":1639928902951,\"rcProjectNum\":8,\"rcActivation\":62.9,\"rcPatentNum\":21,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"大数据分析\",\"createBy\":\"admin\",\"createTime\":1639726417000,\"updateBy\":\"superAdmin\",\"rcId\":900759249,\"rcName\":\"廖七\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:48:27');
+INSERT INTO `sys_oper_log` VALUES (352, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1838554377,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"辽宁省/鞍山市\",\"updateTime\":1639928896910,\"rcProjectNum\":8,\"rcActivation\":62.9,\"rcPatentNum\":21,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"大数据分析\",\"createBy\":\"admin\",\"createTime\":1639726417000,\"updateBy\":\"superAdmin\",\"rcId\":900759249,\"rcName\":\"廖七\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:48:27');
+INSERT INTO `sys_oper_log` VALUES (353, '新增人才', 1, 'com.ruoyi.rcgl.controller.RcglRcController.add()', 'POST', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1224324815,\"rcPaperNum\":30,\"rcLevel\":\"市级\",\"rcAreas\":\"广东省/佛山市\",\"rcProjectNum\":10,\"rcActivation\":91.5,\"rcPatentNum\":15,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"可再生能源\",\"createBy\":\"superAdmin\",\"createTime\":1639929172435,\"rcId\":1813461686,\"rcName\":\"甄子丹\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:52:52');
+INSERT INTO `sys_oper_log` VALUES (354, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1224324815,\"rcPaperNum\":30,\"rcLevel\":\"市级\",\"rcAreas\":\"广东省/佛山市\",\"updateTime\":1639929225429,\"rcProjectNum\":10,\"rcActivation\":88.5,\"rcPatentNum\":15,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"可再生能源\",\"createBy\":\"superAdmin\",\"createTime\":1639929172000,\"updateBy\":\"superAdmin\",\"rcId\":1813461686,\"rcName\":\"甄子丹\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:53:45');
+INSERT INTO `sys_oper_log` VALUES (355, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1222422917,\"rcPaperNum\":10,\"rcLevel\":\"院士\",\"rcAreas\":\"山东省/济南市\",\"updateTime\":1639929237966,\"rcProjectNum\":8,\"rcActivation\":63.4,\"rcPatentNum\":20,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"基因工程\",\"createBy\":\"admin\",\"createTime\":1639726319000,\"updateBy\":\"superAdmin\",\"rcId\":981409868,\"rcName\":\"吴开\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:53:58');
+INSERT INTO `sys_oper_log` VALUES (356, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1783052344,\"rcPaperNum\":10,\"rcLevel\":\"省级\",\"rcAreas\":\"广东省/韶关市\",\"updateTime\":1639929242712,\"rcProjectNum\":56,\"rcActivation\":100.0,\"rcPatentNum\":20,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"新能源\",\"createBy\":\"admin\",\"createTime\":1639642204000,\"updateBy\":\"superAdmin\",\"rcId\":906451348,\"rcName\":\"吴六\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:54:03');
+INSERT INTO `sys_oper_log` VALUES (357, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":195258530,\"rcPaperNum\":10,\"rcLevel\":\"市级\",\"rcAreas\":\"北京市\",\"updateTime\":1639929246332,\"rcProjectNum\":8,\"rcActivation\":37.9,\"rcPatentNum\":5,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"数据挖掘\",\"createBy\":\"admin\",\"createTime\":1639319272000,\"updateBy\":\"superAdmin\",\"rcId\":1317827681,\"rcName\":\"李四\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:54:06');
+INSERT INTO `sys_oper_log` VALUES (358, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1783052344,\"rcPaperNum\":10,\"rcLevel\":\"省级\",\"rcAreas\":\"广东省/韶关市\",\"updateTime\":1639929260609,\"rcProjectNum\":56,\"rcActivation\":100.0,\"rcPatentNum\":20,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"新能源\",\"createBy\":\"admin\",\"createTime\":1639642204000,\"updateBy\":\"superAdmin\",\"rcId\":906451348,\"rcName\":\"吴六\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:54:20');
+INSERT INTO `sys_oper_log` VALUES (359, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":395991575,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"广东省/广州市\",\"updateTime\":1639929264791,\"rcProjectNum\":3,\"rcActivation\":27.200000000000003,\"rcPatentNum\":4,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"AI算法\",\"createBy\":\"admin\",\"createTime\":1639317859000,\"updateBy\":\"superAdmin\",\"rcId\":1018529144,\"rcName\":\"张三\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:54:24');
+INSERT INTO `sys_oper_log` VALUES (360, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":769838009,\"rcPaperNum\":13,\"rcLevel\":\"省级\",\"rcAreas\":\"北京市\",\"updateTime\":1639929271903,\"rcProjectNum\":10,\"rcActivation\":57.9,\"rcPatentNum\":12,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"18\",\"createBy\":\"admin\",\"createTime\":1639730156000,\"updateBy\":\"superAdmin\",\"rcId\":571400081,\"rcName\":\"刘美\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:54:31');
+INSERT INTO `sys_oper_log` VALUES (361, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1224324815,\"rcPaperNum\":30,\"rcLevel\":\"市级\",\"rcAreas\":\"广东省/佛山市\",\"updateTime\":1639929277732,\"rcProjectNum\":10,\"rcActivation\":88.5,\"rcPatentNum\":15,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"可再生能源\",\"createBy\":\"superAdmin\",\"createTime\":1639929172000,\"updateBy\":\"superAdmin\",\"rcId\":1813461686,\"rcName\":\"甄子丹\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:54:37');
+INSERT INTO `sys_oper_log` VALUES (362, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1783052344,\"rcPaperNum\":10,\"rcLevel\":\"省级\",\"rcAreas\":\"广东省/韶关市\",\"updateTime\":1639929327280,\"rcProjectNum\":56,\"rcActivation\":100.0,\"rcPatentNum\":20,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"新能源\",\"createBy\":\"admin\",\"createTime\":1639642204000,\"updateBy\":\"superAdmin\",\"rcId\":906451348,\"rcName\":\"吴六\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:27');
+INSERT INTO `sys_oper_log` VALUES (363, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1224324815,\"rcPaperNum\":30,\"rcLevel\":\"市级\",\"rcAreas\":\"广东省/佛山市\",\"updateTime\":1639929331557,\"rcProjectNum\":10,\"rcActivation\":88.5,\"rcPatentNum\":15,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"可再生能源\",\"createBy\":\"superAdmin\",\"createTime\":1639929172000,\"updateBy\":\"superAdmin\",\"rcId\":1813461686,\"rcName\":\"甄子丹\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:31');
+INSERT INTO `sys_oper_log` VALUES (364, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":2102076844,\"rcPaperNum\":7,\"rcLevel\":\"院士\",\"rcAreas\":\"吉林省/长春市\",\"updateTime\":1639929335017,\"rcProjectNum\":5,\"rcActivation\":60.0,\"rcPatentNum\":10,\"cyDirection\":\"节能环保方向\",\"rcResearchField\":\"网络安全\",\"createBy\":\"admin\",\"createTime\":1639320207000,\"updateBy\":\"superAdmin\",\"rcId\":1462441642,\"rcName\":\"刘星\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:35');
+INSERT INTO `sys_oper_log` VALUES (365, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":391866149,\"rcPaperNum\":11,\"rcLevel\":\"国家级\",\"rcAreas\":\"河北省/秦皇岛市\",\"updateTime\":1639929340103,\"rcProjectNum\":10,\"rcActivation\":60.0,\"rcPatentNum\":10,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"电力资源\",\"createBy\":\"admin\",\"createTime\":1639724010000,\"updateBy\":\"superAdmin\",\"rcId\":1652133453,\"rcName\":\"张涛\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:40');
+INSERT INTO `sys_oper_log` VALUES (366, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":422169164,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"北京市\",\"updateTime\":1639929344166,\"rcProjectNum\":10,\"rcActivation\":60.0,\"rcPatentNum\":8,\"cyDirection\":\"高端装备制造产业方向\",\"rcResearchField\":\"机械自动化\",\"createBy\":\"admin\",\"createTime\":1639668652000,\"updateBy\":\"superAdmin\",\"rcId\":697249190,\"rcName\":\"安婷\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:44');
+INSERT INTO `sys_oper_log` VALUES (367, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":391866149,\"rcPaperNum\":12,\"rcLevel\":\"国家级\",\"rcAreas\":\"黑龙江省/哈尔滨市\",\"updateTime\":1639929347562,\"rcProjectNum\":67,\"rcActivation\":100.0,\"rcPatentNum\":4,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"车联网\",\"createBy\":\"admin\",\"createTime\":1639582299000,\"updateBy\":\"superAdmin\",\"rcId\":414292156,\"rcName\":\"赵武\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:47');
+INSERT INTO `sys_oper_log` VALUES (368, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1224324815,\"rcPaperNum\":30,\"rcLevel\":\"市级\",\"rcAreas\":\"广东省/佛山市\",\"updateTime\":1639929352171,\"rcProjectNum\":10,\"rcActivation\":88.5,\"rcPatentNum\":15,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"可再生能源\",\"createBy\":\"superAdmin\",\"createTime\":1639929172000,\"updateBy\":\"superAdmin\",\"rcId\":1813461686,\"rcName\":\"甄子丹\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:52');
+INSERT INTO `sys_oper_log` VALUES (369, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1222422917,\"rcPaperNum\":10,\"rcLevel\":\"院士\",\"rcAreas\":\"山东省/济南市\",\"updateTime\":1639929356072,\"rcProjectNum\":8,\"rcActivation\":63.4,\"rcPatentNum\":20,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"基因工程\",\"createBy\":\"admin\",\"createTime\":1639726319000,\"updateBy\":\"superAdmin\",\"rcId\":981409868,\"rcName\":\"吴开\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:55:56');
+INSERT INTO `sys_oper_log` VALUES (370, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1838554377,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"辽宁省/鞍山市\",\"updateTime\":1639929360121,\"rcProjectNum\":8,\"rcActivation\":65.1,\"rcPatentNum\":21,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"大数据分析\",\"createBy\":\"admin\",\"createTime\":1639726417000,\"updateBy\":\"superAdmin\",\"rcId\":900759249,\"rcName\":\"廖七\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:56:00');
+INSERT INTO `sys_oper_log` VALUES (371, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1222422917,\"rcPaperNum\":10,\"rcLevel\":\"院士\",\"rcAreas\":\"山东省/济南市\",\"updateTime\":1639929365456,\"rcProjectNum\":8,\"rcActivation\":63.4,\"rcPatentNum\":20,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"基因工程\",\"createBy\":\"admin\",\"createTime\":1639726319000,\"updateBy\":\"superAdmin\",\"rcId\":981409868,\"rcName\":\"吴开\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:56:05');
+INSERT INTO `sys_oper_log` VALUES (372, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1838554377,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"辽宁省/鞍山市\",\"updateTime\":1639929368818,\"rcProjectNum\":8,\"rcActivation\":65.1,\"rcPatentNum\":21,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"大数据分析\",\"createBy\":\"admin\",\"createTime\":1639726417000,\"updateBy\":\"superAdmin\",\"rcId\":900759249,\"rcName\":\"廖七\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:56:08');
+INSERT INTO `sys_oper_log` VALUES (373, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":422169164,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"北京市\",\"updateTime\":1639929379624,\"rcProjectNum\":10,\"rcActivation\":77.19999999999999,\"rcPatentNum\":26,\"cyDirection\":\"高端装备制造产业方向\",\"rcResearchField\":\"机械自动化\",\"createBy\":\"admin\",\"createTime\":1639668652000,\"updateBy\":\"superAdmin\",\"rcId\":697249190,\"rcName\":\"安婷\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:56:19');
+INSERT INTO `sys_oper_log` VALUES (374, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":391866149,\"rcPaperNum\":11,\"rcLevel\":\"国家级\",\"rcAreas\":\"河北省/秦皇岛市\",\"updateTime\":1639929392064,\"rcProjectNum\":10,\"rcActivation\":60.0,\"rcPatentNum\":15,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"电力资源\",\"createBy\":\"admin\",\"createTime\":1639724010000,\"updateBy\":\"superAdmin\",\"rcId\":1652133453,\"rcName\":\"张涛\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-19 23:56:32');
+INSERT INTO `sys_oper_log` VALUES (375, '企业管理', 5, 'com.ruoyi.qygl.controller.QyglController.export()', 'POST', 1, 'superAdmin', NULL, '/qygl/export', '127.0.0.1', '', '{\"qyAreas\":\"\"}', NULL, 0, NULL, '2021-12-20 13:57:10');
+INSERT INTO `sys_oper_log` VALUES (376, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":195258530,\"rcPaperNum\":10,\"rcLevel\":\"市级\",\"rcAreas\":\"北京市\",\"updateTime\":1639979986304,\"rcProjectNum\":8,\"rcActivation\":60.0,\"rcPatentNum\":15,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"数据挖掘\",\"createBy\":\"admin\",\"createTime\":1639319272000,\"updateBy\":\"superAdmin\",\"rcId\":1317827681,\"rcName\":\"李四\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 13:59:46');
+INSERT INTO `sys_oper_log` VALUES (377, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":769838009,\"rcPaperNum\":13,\"rcLevel\":\"省级\",\"rcAreas\":\"北京市\",\"updateTime\":1639980005496,\"rcProjectNum\":10,\"rcActivation\":74.9,\"rcPatentNum\":22,\"cyDirection\":\"生物产业方向\",\"rcResearchField\":\"18\",\"createBy\":\"admin\",\"createTime\":1639730156000,\"updateBy\":\"superAdmin\",\"rcId\":571400081,\"rcName\":\"刘美\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 14:00:05');
+INSERT INTO `sys_oper_log` VALUES (378, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":395991575,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"广东省/广州市\",\"updateTime\":1639980090903,\"rcProjectNum\":13,\"rcActivation\":100.0,\"rcPatentNum\":40,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"AI算法\",\"createBy\":\"admin\",\"createTime\":1639317859000,\"updateBy\":\"superAdmin\",\"rcId\":1018529144,\"rcName\":\"张三\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 14:01:30');
+INSERT INTO `sys_oper_log` VALUES (379, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":391866149,\"rcPaperNum\":11,\"rcLevel\":\"国家级\",\"rcAreas\":\"河北省/秦皇岛市\",\"updateTime\":1639980105772,\"rcProjectNum\":10,\"rcActivation\":60.0,\"rcPatentNum\":15,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"电力资源\",\"createBy\":\"admin\",\"createTime\":1639724010000,\"updateBy\":\"superAdmin\",\"rcId\":1652133453,\"rcName\":\"张涛\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 14:01:45');
+INSERT INTO `sys_oper_log` VALUES (380, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":391866149,\"rcPaperNum\":12,\"rcLevel\":\"国家级\",\"rcAreas\":\"黑龙江省/哈尔滨市\",\"updateTime\":1639980131540,\"rcProjectNum\":16,\"rcActivation\":87.6,\"rcPatentNum\":24,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"车联网\",\"createBy\":\"admin\",\"createTime\":1639582299000,\"updateBy\":\"superAdmin\",\"rcId\":414292156,\"rcName\":\"赵武\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 14:02:11');
+INSERT INTO `sys_oper_log` VALUES (381, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":1783052344,\"rcPaperNum\":10,\"rcLevel\":\"省级\",\"rcAreas\":\"广东省/韶关市\",\"updateTime\":1639980144257,\"rcProjectNum\":26,\"rcActivation\":95.80000000000001,\"rcPatentNum\":20,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"新能源\",\"createBy\":\"admin\",\"createTime\":1639642204000,\"updateBy\":\"superAdmin\",\"rcId\":906451348,\"rcName\":\"吴六\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 14:02:24');
+INSERT INTO `sys_oper_log` VALUES (382, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":395991575,\"rcPaperNum\":10,\"rcLevel\":\"国家级\",\"rcAreas\":\"广东省/广州市\",\"updateTime\":1639980151086,\"rcProjectNum\":13,\"rcActivation\":100.0,\"rcPatentNum\":40,\"cyDirection\":\"新材料产业方向\",\"rcResearchField\":\"AI算法\",\"createBy\":\"admin\",\"createTime\":1639317859000,\"updateBy\":\"superAdmin\",\"rcId\":1018529144,\"rcName\":\"张三\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 14:02:31');
+INSERT INTO `sys_oper_log` VALUES (383, '修改人才信息', 2, 'com.ruoyi.rcgl.controller.RcglRcController.edit()', 'PUT', 1, 'superAdmin', NULL, '/rc', '127.0.0.1', '', '{\"rcCompany\":195258530,\"rcPaperNum\":10,\"rcLevel\":\"市级\",\"rcAreas\":\"北京市\",\"updateTime\":1639980155995,\"rcProjectNum\":8,\"rcActivation\":60.0,\"rcPatentNum\":15,\"cyDirection\":\"新一代信息技术产业方向\",\"rcResearchField\":\"数据挖掘\",\"createBy\":\"admin\",\"createTime\":1639319272000,\"updateBy\":\"superAdmin\",\"rcId\":1317827681,\"rcName\":\"李四\"}', '{\"msg\":\"操作成功\",\"code\":200}', 0, NULL, '2021-12-20 14:02:36');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -1111,7 +1197,8 @@ CREATE TABLE `sys_role`  (
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES (1, '超级管理员', 'admin', 1, '1', 1, 1, '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL, '超级管理员');
-INSERT INTO `sys_role` VALUES (2, '普通角色', 'common', 2, '2', 1, 1, '0', '0', 'admin', '2021-12-02 20:07:26', '', NULL, '普通角色');
+INSERT INTO `sys_role` VALUES (2, '普通用户', 'common', 2, '2', 1, 1, '0', '0', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:14:47', '普通角色');
+INSERT INTO `sys_role` VALUES (100, '系统管理员', 'superAdmin', 3, '1', 1, 1, '0', '0', 'admin', '2021-12-19 16:54:20', 'admin', '2021-12-19 17:01:00', '系统管理员');
 
 -- ----------------------------
 -- Table structure for sys_role_dept
@@ -1143,90 +1230,88 @@ CREATE TABLE `sys_role_menu`  (
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
-INSERT INTO `sys_role_menu` VALUES (2, 1);
-INSERT INTO `sys_role_menu` VALUES (2, 2);
-INSERT INTO `sys_role_menu` VALUES (2, 3);
-INSERT INTO `sys_role_menu` VALUES (2, 4);
-INSERT INTO `sys_role_menu` VALUES (2, 100);
-INSERT INTO `sys_role_menu` VALUES (2, 101);
-INSERT INTO `sys_role_menu` VALUES (2, 102);
-INSERT INTO `sys_role_menu` VALUES (2, 103);
-INSERT INTO `sys_role_menu` VALUES (2, 104);
-INSERT INTO `sys_role_menu` VALUES (2, 105);
-INSERT INTO `sys_role_menu` VALUES (2, 106);
-INSERT INTO `sys_role_menu` VALUES (2, 107);
-INSERT INTO `sys_role_menu` VALUES (2, 108);
-INSERT INTO `sys_role_menu` VALUES (2, 109);
-INSERT INTO `sys_role_menu` VALUES (2, 110);
-INSERT INTO `sys_role_menu` VALUES (2, 111);
-INSERT INTO `sys_role_menu` VALUES (2, 112);
-INSERT INTO `sys_role_menu` VALUES (2, 113);
-INSERT INTO `sys_role_menu` VALUES (2, 114);
-INSERT INTO `sys_role_menu` VALUES (2, 115);
-INSERT INTO `sys_role_menu` VALUES (2, 116);
-INSERT INTO `sys_role_menu` VALUES (2, 500);
-INSERT INTO `sys_role_menu` VALUES (2, 501);
-INSERT INTO `sys_role_menu` VALUES (2, 1000);
-INSERT INTO `sys_role_menu` VALUES (2, 1001);
-INSERT INTO `sys_role_menu` VALUES (2, 1002);
-INSERT INTO `sys_role_menu` VALUES (2, 1003);
-INSERT INTO `sys_role_menu` VALUES (2, 1004);
-INSERT INTO `sys_role_menu` VALUES (2, 1005);
-INSERT INTO `sys_role_menu` VALUES (2, 1006);
-INSERT INTO `sys_role_menu` VALUES (2, 1007);
-INSERT INTO `sys_role_menu` VALUES (2, 1008);
-INSERT INTO `sys_role_menu` VALUES (2, 1009);
-INSERT INTO `sys_role_menu` VALUES (2, 1010);
-INSERT INTO `sys_role_menu` VALUES (2, 1011);
-INSERT INTO `sys_role_menu` VALUES (2, 1012);
-INSERT INTO `sys_role_menu` VALUES (2, 1013);
-INSERT INTO `sys_role_menu` VALUES (2, 1014);
-INSERT INTO `sys_role_menu` VALUES (2, 1015);
-INSERT INTO `sys_role_menu` VALUES (2, 1016);
-INSERT INTO `sys_role_menu` VALUES (2, 1017);
-INSERT INTO `sys_role_menu` VALUES (2, 1018);
-INSERT INTO `sys_role_menu` VALUES (2, 1019);
-INSERT INTO `sys_role_menu` VALUES (2, 1020);
-INSERT INTO `sys_role_menu` VALUES (2, 1021);
-INSERT INTO `sys_role_menu` VALUES (2, 1022);
-INSERT INTO `sys_role_menu` VALUES (2, 1023);
-INSERT INTO `sys_role_menu` VALUES (2, 1024);
-INSERT INTO `sys_role_menu` VALUES (2, 1025);
-INSERT INTO `sys_role_menu` VALUES (2, 1026);
-INSERT INTO `sys_role_menu` VALUES (2, 1027);
-INSERT INTO `sys_role_menu` VALUES (2, 1028);
-INSERT INTO `sys_role_menu` VALUES (2, 1029);
-INSERT INTO `sys_role_menu` VALUES (2, 1030);
-INSERT INTO `sys_role_menu` VALUES (2, 1031);
-INSERT INTO `sys_role_menu` VALUES (2, 1032);
-INSERT INTO `sys_role_menu` VALUES (2, 1033);
-INSERT INTO `sys_role_menu` VALUES (2, 1034);
-INSERT INTO `sys_role_menu` VALUES (2, 1035);
-INSERT INTO `sys_role_menu` VALUES (2, 1036);
-INSERT INTO `sys_role_menu` VALUES (2, 1037);
-INSERT INTO `sys_role_menu` VALUES (2, 1038);
-INSERT INTO `sys_role_menu` VALUES (2, 1039);
-INSERT INTO `sys_role_menu` VALUES (2, 1040);
-INSERT INTO `sys_role_menu` VALUES (2, 1041);
-INSERT INTO `sys_role_menu` VALUES (2, 1042);
-INSERT INTO `sys_role_menu` VALUES (2, 1043);
-INSERT INTO `sys_role_menu` VALUES (2, 1044);
-INSERT INTO `sys_role_menu` VALUES (2, 1045);
-INSERT INTO `sys_role_menu` VALUES (2, 1046);
-INSERT INTO `sys_role_menu` VALUES (2, 1047);
-INSERT INTO `sys_role_menu` VALUES (2, 1048);
-INSERT INTO `sys_role_menu` VALUES (2, 1049);
-INSERT INTO `sys_role_menu` VALUES (2, 1050);
-INSERT INTO `sys_role_menu` VALUES (2, 1051);
-INSERT INTO `sys_role_menu` VALUES (2, 1052);
-INSERT INTO `sys_role_menu` VALUES (2, 1053);
-INSERT INTO `sys_role_menu` VALUES (2, 1054);
-INSERT INTO `sys_role_menu` VALUES (2, 1055);
-INSERT INTO `sys_role_menu` VALUES (2, 1056);
-INSERT INTO `sys_role_menu` VALUES (2, 1057);
-INSERT INTO `sys_role_menu` VALUES (2, 1058);
-INSERT INTO `sys_role_menu` VALUES (2, 1059);
-INSERT INTO `sys_role_menu` VALUES (2, 1060);
+INSERT INTO `sys_role_menu` VALUES (2, 2000);
+INSERT INTO `sys_role_menu` VALUES (2, 2001);
+INSERT INTO `sys_role_menu` VALUES (2, 2005);
+INSERT INTO `sys_role_menu` VALUES (2, 2006);
+INSERT INTO `sys_role_menu` VALUES (2, 2013);
+INSERT INTO `sys_role_menu` VALUES (2, 2014);
+INSERT INTO `sys_role_menu` VALUES (2, 2018);
+INSERT INTO `sys_role_menu` VALUES (2, 2019);
+INSERT INTO `sys_role_menu` VALUES (2, 2020);
+INSERT INTO `sys_role_menu` VALUES (2, 2021);
+INSERT INTO `sys_role_menu` VALUES (2, 2025);
+INSERT INTO `sys_role_menu` VALUES (2, 2026);
+INSERT INTO `sys_role_menu` VALUES (2, 2027);
+INSERT INTO `sys_role_menu` VALUES (100, 1);
+INSERT INTO `sys_role_menu` VALUES (100, 2);
+INSERT INTO `sys_role_menu` VALUES (100, 100);
+INSERT INTO `sys_role_menu` VALUES (100, 101);
+INSERT INTO `sys_role_menu` VALUES (100, 103);
+INSERT INTO `sys_role_menu` VALUES (100, 104);
+INSERT INTO `sys_role_menu` VALUES (100, 107);
+INSERT INTO `sys_role_menu` VALUES (100, 108);
+INSERT INTO `sys_role_menu` VALUES (100, 109);
+INSERT INTO `sys_role_menu` VALUES (100, 111);
+INSERT INTO `sys_role_menu` VALUES (100, 112);
+INSERT INTO `sys_role_menu` VALUES (100, 500);
+INSERT INTO `sys_role_menu` VALUES (100, 501);
+INSERT INTO `sys_role_menu` VALUES (100, 1001);
+INSERT INTO `sys_role_menu` VALUES (100, 1002);
+INSERT INTO `sys_role_menu` VALUES (100, 1003);
+INSERT INTO `sys_role_menu` VALUES (100, 1004);
+INSERT INTO `sys_role_menu` VALUES (100, 1005);
+INSERT INTO `sys_role_menu` VALUES (100, 1006);
+INSERT INTO `sys_role_menu` VALUES (100, 1007);
+INSERT INTO `sys_role_menu` VALUES (100, 1008);
+INSERT INTO `sys_role_menu` VALUES (100, 1009);
+INSERT INTO `sys_role_menu` VALUES (100, 1010);
+INSERT INTO `sys_role_menu` VALUES (100, 1011);
+INSERT INTO `sys_role_menu` VALUES (100, 1012);
+INSERT INTO `sys_role_menu` VALUES (100, 1017);
+INSERT INTO `sys_role_menu` VALUES (100, 1018);
+INSERT INTO `sys_role_menu` VALUES (100, 1019);
+INSERT INTO `sys_role_menu` VALUES (100, 1020);
+INSERT INTO `sys_role_menu` VALUES (100, 1021);
+INSERT INTO `sys_role_menu` VALUES (100, 1022);
+INSERT INTO `sys_role_menu` VALUES (100, 1023);
+INSERT INTO `sys_role_menu` VALUES (100, 1024);
+INSERT INTO `sys_role_menu` VALUES (100, 1025);
+INSERT INTO `sys_role_menu` VALUES (100, 1036);
+INSERT INTO `sys_role_menu` VALUES (100, 1037);
+INSERT INTO `sys_role_menu` VALUES (100, 1038);
+INSERT INTO `sys_role_menu` VALUES (100, 1039);
+INSERT INTO `sys_role_menu` VALUES (100, 1040);
+INSERT INTO `sys_role_menu` VALUES (100, 1041);
+INSERT INTO `sys_role_menu` VALUES (100, 1042);
+INSERT INTO `sys_role_menu` VALUES (100, 1043);
+INSERT INTO `sys_role_menu` VALUES (100, 1044);
+INSERT INTO `sys_role_menu` VALUES (100, 1045);
+INSERT INTO `sys_role_menu` VALUES (100, 1046);
+INSERT INTO `sys_role_menu` VALUES (100, 1047);
+INSERT INTO `sys_role_menu` VALUES (100, 1048);
+INSERT INTO `sys_role_menu` VALUES (100, 2000);
+INSERT INTO `sys_role_menu` VALUES (100, 2001);
+INSERT INTO `sys_role_menu` VALUES (100, 2002);
+INSERT INTO `sys_role_menu` VALUES (100, 2003);
+INSERT INTO `sys_role_menu` VALUES (100, 2004);
+INSERT INTO `sys_role_menu` VALUES (100, 2005);
+INSERT INTO `sys_role_menu` VALUES (100, 2006);
+INSERT INTO `sys_role_menu` VALUES (100, 2013);
+INSERT INTO `sys_role_menu` VALUES (100, 2014);
+INSERT INTO `sys_role_menu` VALUES (100, 2015);
+INSERT INTO `sys_role_menu` VALUES (100, 2016);
+INSERT INTO `sys_role_menu` VALUES (100, 2017);
+INSERT INTO `sys_role_menu` VALUES (100, 2018);
+INSERT INTO `sys_role_menu` VALUES (100, 2019);
+INSERT INTO `sys_role_menu` VALUES (100, 2020);
+INSERT INTO `sys_role_menu` VALUES (100, 2021);
+INSERT INTO `sys_role_menu` VALUES (100, 2022);
+INSERT INTO `sys_role_menu` VALUES (100, 2023);
+INSERT INTO `sys_role_menu` VALUES (100, 2024);
+INSERT INTO `sys_role_menu` VALUES (100, 2025);
+INSERT INTO `sys_role_menu` VALUES (100, 2026);
+INSERT INTO `sys_role_menu` VALUES (100, 2027);
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -1258,8 +1343,9 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 103, 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2021-12-02 20:07:26', 'admin', '2021-12-02 20:07:26', '', NULL, '管理员');
-INSERT INTO `sys_user` VALUES (2, 105, 'ry', '若依', '00', 'ry@qq.com', '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2021-12-02 20:07:26', 'admin', '2021-12-02 20:07:26', '', NULL, '测试员');
+INSERT INTO `sys_user` VALUES (1, 103, 'admin', '李四', '00', '12345@qq.com', '15888888888', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2021-12-02 20:07:26', 'admin', '2021-12-02 20:07:26', '', '2021-12-19 15:50:05', '管理员');
+INSERT INTO `sys_user` VALUES (2, 105, 'ly', '刘依', '00', 'ly@qq.com', '15666666666', '1', '', '$2a$10$IoKUt6xRbq9aqk809gXy7Oaizo9tE3fV5cQUVGe8hFrUYlhH4/.s2', '0', '0', '127.0.0.1', '2021-12-02 20:07:26', 'admin', '2021-12-02 20:07:26', 'admin', '2021-12-19 16:12:57', '普通用户');
+INSERT INTO `sys_user` VALUES (100, 100, 'superAdmin', '王安石', '00', 'sa@qq.com', '16696759916', '0', '', '$2a$10$zG/.7cM9fmxxVPWX7BAGaedM4Amp7wdbwCSnv3bAp5SfzCQHge3Ue', '0', '0', '', NULL, 'admin', '2021-12-19 16:56:32', '', NULL, '集团董事长');
 
 -- ----------------------------
 -- Table structure for sys_user_post
@@ -1275,7 +1361,8 @@ CREATE TABLE `sys_user_post`  (
 -- Records of sys_user_post
 -- ----------------------------
 INSERT INTO `sys_user_post` VALUES (1, 1);
-INSERT INTO `sys_user_post` VALUES (2, 2);
+INSERT INTO `sys_user_post` VALUES (2, 4);
+INSERT INTO `sys_user_post` VALUES (100, 1);
 
 -- ----------------------------
 -- Table structure for sys_user_role
@@ -1292,5 +1379,6 @@ CREATE TABLE `sys_user_role`  (
 -- ----------------------------
 INSERT INTO `sys_user_role` VALUES (1, 1);
 INSERT INTO `sys_user_role` VALUES (2, 2);
+INSERT INTO `sys_user_role` VALUES (100, 100);
 
 SET FOREIGN_KEY_CHECKS = 1;

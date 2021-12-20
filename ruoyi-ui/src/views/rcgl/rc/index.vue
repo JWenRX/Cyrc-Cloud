@@ -228,9 +228,6 @@
         <el-form-item label="项目数" prop="rcProjectNum">
           <el-input v-model="form.rcProjectNum" placeholder="请输入项目数"/>
         </el-form-item>
-        <el-form-item label="活跃度" prop="rcActivation">
-          <el-input v-model="form.rcActivation" placeholder="请输入活跃度"/>
-        </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button type="primary" @click="submitForm">确 定</el-button>
@@ -450,6 +447,13 @@ export default {
     /** 提交按钮 */
     async submitForm() {
       await this.getCyDirection(this.form.rcCompany)
+      let activation = this.form.rcPatentNum * 1.7 + this.form.rcPaperNum * 1.5 + this.form.rcProjectNum * 1.8;
+      if (activation > 100) {
+        activation = 100;
+      } else if (activation < 60) {
+        activation = 60;
+      }
+      this.form.rcActivation = activation;
       this.$refs["form"].validate(valid => {
         if (valid) {
           if (this.form.rcId != null) {
